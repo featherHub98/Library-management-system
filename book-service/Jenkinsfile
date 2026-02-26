@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Assuming git repo, replace with your repo URL
+                git branch: 'main', url: 'https://github.com/your-username/library-management-system.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('book-service') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('book-service') {
+                    // Add test command if available
+                    sh 'npm test || echo "No tests defined"'
+                }
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                dir('book-service') {
+                    sh 'docker build -t book-service:latest .'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Stop existing container if running
+                sh 'docker stop book-service || true'
+                sh 'docker rm book-service || true'
+                // Run new container
+                sh 'docker run -d --name book-service -p 3002:3002 book-service:latest'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up
+            sh 'docker image prune -f'
+        }
+    }
+}

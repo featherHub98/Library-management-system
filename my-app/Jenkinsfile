@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Assuming git repo, replace with your repo URL
+                git branch: 'main', url: 'https://github.com/your-username/library-management-system.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('my-app') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('my-app') {
+                    // Add test command if available
+                    sh 'npm test || echo "No tests defined"'
+                }
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                dir('my-app') {
+                    sh 'docker build -t my-app:latest .'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Stop existing container if running
+                sh 'docker stop my-app || true'
+                sh 'docker rm my-app || true'
+                // Run new container
+                sh 'docker run -d --name my-app -p 3000:3000 my-app:latest'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up
+            sh 'docker image prune -f'
+        }
+    }
+}

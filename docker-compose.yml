@@ -1,0 +1,35 @@
+services:
+  consul:
+    # Pinning a specific version avoids the "manifest unknown" error
+    image: consul:1.15.4
+    network_mode: "host"
+     
+    environment:
+      - CONSUL_BIND_INTERFACE=eth0
+
+
+  mongodb:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+      MONGO_INITDB_DATABASE: auth_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: bookstore
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+
+volumes:
+  mongodata:
+  postgresdata:

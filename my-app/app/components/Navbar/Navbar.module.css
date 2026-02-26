@@ -1,0 +1,91 @@
+/* components/Navbar.module.css */
+
+/* AppBar Styles */
+.appBar {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Toolbar Layout */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo / Brand */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #1976d2; /* primary.main */
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.logoIcon {
+  margin-right: 8px;
+  color: #1976d2;
+}
+
+/* Desktop Navigation Container */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hide desktop nav on mobile */
+@media (max-width: 899px) {
+  .desktopNav {
+    display: none;
+  }
+}
+
+/* Mobile Menu Button (Hamburger) */
+.mobileMenuButton {
+  display: none;
+}
+
+/* Show hamburger on mobile */
+@media (max-width: 899px) {
+  .mobileMenuButton {
+    display: block;
+  }
+}
+
+/* Navigation Buttons */
+.navButton {
+  border: 1px solid #1976d2;
+  color: #1976d2;
+}
+
+.navButton:hover {
+  background-color: rgba(25, 118, 210, 0.04);
+}
+
+/* Drawer Content */
+.drawerContent {
+  width: 250px;
+  text-align: center;
+}
+
+.drawerTitle {
+  margin: 16px 0;
+}
+
+.drawerList {
+  padding: 0;
+}
+
+.drawerListItem {
+  justify-content: center;
+}
+
+.drawerLanguageItem {
+  cursor: pointer;
+}
+
+.activeLanguage {
+  background-color: rgba(0, 0, 0, 0.04);
+}

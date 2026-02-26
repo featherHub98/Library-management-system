@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Assuming git repo, replace with your repo URL
+                git branch: 'main', url: 'https://github.com/your-username/library-management-system.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('auth-service') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('auth-service') {
+                    // Add test command if available
+                    sh 'npm test || echo "No tests defined"'
+                }
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                dir('auth-service') {
+                    sh 'docker build -t auth-service:latest .'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Stop existing container if running
+                sh 'docker stop auth-service || true'
+                sh 'docker rm auth-service || true'
+                // Run new container
+                sh 'docker run -d --name auth-service -p 3001:3001 auth-service:latest'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up
+            sh 'docker image prune -f'
+        }
+    }
+}

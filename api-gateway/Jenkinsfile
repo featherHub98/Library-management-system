@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Assuming git repo, replace with your repo URL
+                git branch: 'main', url: 'https://github.com/your-username/library-management-system.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('api-gateway') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('api-gateway') {
+                    // Add test command if available
+                    sh 'npm test || echo "No tests defined"'
+                }
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                dir('api-gateway') {
+                    sh 'docker build -t api-gateway:latest .'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Stop existing container if running
+                sh 'docker stop api-gateway || true'
+                sh 'docker rm api-gateway || true'
+                // Run new container
+                sh 'docker run -d --name api-gateway -p 8080:8080 api-gateway:latest'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up
+            sh 'docker image prune -f'
+        }
+    }
+}

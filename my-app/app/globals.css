@@ -1,0 +1,14 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* Ensure background consistency */
+  background-color: #021678; 
+}
+
+/* Custom focus ring for inputs */
+input:focus {
+  outline: none;
+}
