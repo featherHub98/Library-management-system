@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export const connectDB = async (): Promise<void> => {
   try {
-    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/authdb';
+    const mongoURI = process.env.MONGODB_URI || 'mongodb://admin:secret@localhost:27017/auth_db?authSource=admin';
 
     await mongoose.connect(mongoURI);
 

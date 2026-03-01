@@ -3,12 +3,13 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import {
-  Container, Typography, Grid, Card, CardContent,
+  Container, Typography, Card, CardContent,
   Box, Alert, TextField, TablePagination
 } from '@mui/material';
 import en from '@/dictionaries/en.json';
 import fr from '@/dictionaries/fr.json';
 import ar from '@/dictionaries/ar.json';
+import styles from './page.module.css';
 
 const dictionaries = { en, fr, ar };
 
@@ -20,6 +21,8 @@ interface Book {
   basePrice?: number;
   format?: 'ebook' | 'physical';
   price: number;
+  stock?: number;
+  status?: 'in_stock' | 'out_of_stock';
   available?: boolean;
 }
 
@@ -27,6 +30,10 @@ export default function BooksPage() {
   const params = useParams();
   const lang = (params?.lang as string) || 'en';
   const t = dictionaries[lang as keyof typeof dictionaries] || dictionaries.en;
+  const text = (key: string, fallback: string) => {
+    const value = (t as Record<string, unknown>)[key];
+    return typeof value === 'string' ? value : fallback;
+  };
 
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
@@ -70,73 +77,78 @@ export default function BooksPage() {
 
   if (loading) {
     return (
-      <Container maxWidth="lg" sx={{ mt: 4 }}>
+      <Container maxWidth="lg" className={styles.loadingContainer}>
         <Typography variant="h4" component="h1" gutterBottom>
-          {t.books || 'Books'}
+          {text('books', 'Books')}
         </Typography>
-        <Typography>{t.loading || 'Loading books...'}</Typography>
+        <Typography className={styles.loadingText}>{text('loading', 'Loading books...')}</Typography>
       </Container>
     );
   }
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Typography variant="h4" component="h1" gutterBottom>
-        {t.books || 'Books'}
+    <Container maxWidth="lg" className={styles.container}>
+      <Typography variant="h4" component="h1" gutterBottom className={styles.header}>
+        {text('books', 'Books')}
       </Typography>
 
-      {/* search bar */}
-      <Box mb={2}>
+      <Box className={styles.searchContainer}>
         <TextField
           fullWidth
-          label={t.search || 'Search'}
+          label={text('search', 'Search')}
           value={searchTerm}
           onChange={(e) => { setSearchTerm(e.target.value); setPage(0); }}
         />
       </Box>
 
       {error && (
-        <Alert severity="error" sx={{ mb: 2 }}>
+        <Alert severity="error" className={styles.errorAlert}>
           {error}
         </Alert>
       )}
 
-      <Grid container spacing={3}>
+      <Box className={styles.booksGrid}>
         {books.map((book) => (
-          <Grid item xs={12} sm={6} md={4} key={book._id || book.id}>
-            <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" component="h2" gutterBottom>
+          <Box key={book._id || book.id}>
+            <Card className={styles.bookCard}>
+              <CardContent className={styles.bookCardContent}>
+                <Typography variant="h6" component="h2" className={styles.bookTitle}>
                   {book.title}
                 </Typography>
-                <Typography variant="subtitle1" color="text.secondary" gutterBottom>
-                  {t.by || 'by'} {book.author}
+                <Typography className={styles.bookAuthor}>
+                  {text('by', 'by')} {book.author}
                 </Typography>
-                <Typography variant="h6" color="primary">
+                <Typography className={styles.bookPrice}>
                   ${book.price}
                 </Typography>
-                {book.format === 'physical' && book.available === false && (
-                  <Typography variant="body2" color="error">
-                    {t.unavailable || 'Currently unavailable'}
-                  </Typography>
+                {book.format === 'physical' && (
+                  <>
+                    <Typography className={styles.bookStock}>
+                      <span className={styles.stockInfo}>Stock:</span> {book.stock ?? 0}
+                    </Typography>
+                    {book.status === 'out_of_stock' && (
+                      <Typography className={styles.outOfStock}>
+                        Out of stock
+                      </Typography>
+                    )}
+                  </>
                 )}
               </CardContent>
             </Card>
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Box>
 
       {books.length === 0 && !loading && (
-        <Box textAlign="center" mt={4}>
-          <Typography variant="h6" color="text.secondary">
-            {t.noBooks || 'No books available'}
+        <Box className={styles.emptyState}>
+          <Typography variant="h6">
+            {text('noBooks', 'No books available')}
           </Typography>
         </Box>
       )}
 
-      {/* pagination controls */}
       {total > rowsPerPage && (
-        <Box mt={4} display="flex" justifyContent="center">
+        <Box className={styles.paginationContainer}>
           <TablePagination
             component="div"
             count={total}

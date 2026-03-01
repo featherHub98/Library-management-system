@@ -1,0 +1,33 @@
+/* [project]/app/[lang]/login/login.module.css [app-client] (css) */
+.login-module___zsMCa__main {
+  background-color: #f5f5f5;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+}
+
+.login-module___zsMCa__paper {
+  width: 100%;
+  max-width: 400px;
+  padding: 32px;
+}
+
+.login-module___zsMCa__title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-module___zsMCa__link {
+  text-align: center;
+  color: #1976d2;
+  margin-top: 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.login-module___zsMCa__link:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=app_%5Blang%5D_login_login_module_857313f3.css.map*/

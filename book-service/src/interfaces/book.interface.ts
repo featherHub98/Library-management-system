@@ -1,6 +1,7 @@
 import { Document } from 'mongoose';
 
 export type BookFormat = 'ebook' | 'physical';
+export type BookStockStatus = 'in_stock' | 'out_of_stock';
 
 export interface IBook extends Document {
   title: string;
@@ -8,6 +9,8 @@ export interface IBook extends Document {
   basePrice: number;           // input price before adjustments
   format: BookFormat;         // ebook or physical
   price: number;              // computed/sell price
+  stock: number;
+  status: BookStockStatus;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -19,6 +22,8 @@ export interface IBookResponse {
   basePrice: number;
   format: BookFormat;
   price: number;
+  stock: number;
+  status: BookStockStatus;
   createdAt: Date;
   updatedAt: Date;
 }

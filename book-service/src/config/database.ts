@@ -3,7 +3,7 @@ import { Sequelize } from 'sequelize';
 
 export const connectDB = async (): Promise<void> => {
   try {
-    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bookstore';
+    const mongoURI = process.env.MONGODB_URI || 'mongodb://admin:secret@localhost:27017/bookstore?authSource=admin';
     
     await mongoose.connect(mongoURI);
     

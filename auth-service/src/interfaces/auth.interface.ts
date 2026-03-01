@@ -1,9 +1,12 @@
 import { Document } from 'mongoose';
 
+export type UserRole = 'admin' | 'public';
+
 export interface IUser extends Document {
   username: string;
   email: string;
   password: string;
+  role: UserRole;
   resetCode?: string;
   resetExpires?: Date;
   createdAt: Date;
@@ -14,6 +17,7 @@ export interface IUserResponse {
   id: string;
   username: string;
   email: string;
+  role: UserRole;
 }
 
 export interface IAuthService {

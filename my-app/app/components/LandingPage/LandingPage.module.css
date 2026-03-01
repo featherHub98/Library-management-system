@@ -3,109 +3,182 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: #f8f9fa;
 }
 
 
 .heroSection {
-  background-color: #fafafa;
-  padding-top: 64px;
-  padding-bottom: 64px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 900px) {
   .heroSection {
-    padding-top: 96px;
-    padding-bottom: 96px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 }
 
 .heroTitle {
-  font-weight: 700; 
+  font-weight: 800;
   margin-bottom: 16px;
   line-height: 1.2;
-  font-size: 3.75rem; 
+  font-size: 3.75rem;
+  color: white;
+  position: relative;
+  z-index: 1;
 }
 
 .heroSubtitle {
   margin-bottom: 32px;
-  color: rgba(0, 0, 0, 0.6); 
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.25rem;
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
 }
 
 .heroButtons {
   display: flex;
   gap: 16px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
 }
 
 .heroImagePlaceholder {
   width: 100%;
-  height: 300px;
-  background-color: #eeeeee; 
-  border-radius: 16px; 
+  height: 400px;
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
 }
 
 .mapSection {
-  padding: 64px 0;
-  background-color: #f9f9f9;
+  padding: 80px 0;
+  background: white;
+  position: relative;
+}
+
+.locationMarkers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
 .mapIframe {
   width: 100%;
-  height: 400px;
-  border: 0;
+  height: 500px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .featuresSection {
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: #f8f9fa;
 }
 
 .featuresTitle {
   text-align: center;
-  margin-bottom: 48px;
-  font-weight: 700;
-  font-size: 2rem; 
+  margin-bottom: 60px;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: #333;
 }
 
 .featureCard {
   height: 100%;
   text-align: center;
-  padding: 16px;
-  border: 1px solid #eeeeee;
-  box-shadow: none; 
-  border-radius: 4px;
+  padding: 32px 24px;
+  background: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 212, 255, 0.2);
 }
 
 .featureIconWrapper {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
 }
 
 .featureCardTitle {
-  font-weight: 500; 
-  margin-bottom: 8px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 1.25rem;
 }
 
 .featureDescription {
-  color: rgba(0, 0, 0, 0.6); 
+  color: #666;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 .footer {
-  padding: 24px 16px;
+  padding: 32px 16px;
   margin-top: auto;
-  background-color: #eeeeee; 
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  color: white;
+  border-top: 2px solid rgba(0, 212, 255, 0.3);
 }
 
 .footerText {
   text-align: center;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.875rem;
+  font-weight: 300;
 }
 
 @media (max-width: 899px) {
   .heroTitle {
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
+  }
+
+  .heroSection {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .mapIframe {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+  }
+
+  .mapIframe {
+    height: 250px;
+  }
+
+  .featureCard {
+    padding: 24px 16px;
   }
 }

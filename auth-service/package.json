@@ -7,7 +7,8 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": "ts-node src/server.ts",
-    "test": "jest"
+    "test": "jest",
+    "create-admin": "ts-node src/createAdmin.ts"
   },
   "keywords": [],
   "author": "",

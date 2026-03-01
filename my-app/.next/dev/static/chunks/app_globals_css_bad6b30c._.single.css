@@ -1,0 +1,41 @@
+/* [project]/app/globals.css [app-client] (css) */
+.sticky {
+  position: sticky;
+}
+
+.container {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.shrink {
+  flex-shrink: 1;
+}
+
+html {
+  background-color: #f8f9fa !important;
+}
+
+body {
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa !important;
+}
+
+* {
+  background-color: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=app_globals_css_bad6b30c._.single.css.map*/

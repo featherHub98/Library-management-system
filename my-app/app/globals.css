@@ -3,9 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
-  /* Ensure background consistency */
-  background-color: #021678; 
+  background-color: #f8f9fa !important;
+  color: #333 !important;
+  margin: 0;
+  padding: 0;
 }
 
 /* Custom focus ring for inputs */

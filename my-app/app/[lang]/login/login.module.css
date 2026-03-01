@@ -3,28 +3,120 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 20px;
 }
 
 .paper {
-  padding: 32px;
+  padding: 40px;
   width: 100%;
   max-width: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .title {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   text-align: center;
+  color: #333;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form > * {
+  margin-bottom: 0 !important;
+}
+
+.inputField {
+  margin-bottom: 16px;
+}
+
+.submitButton {
+  margin-top: 12px;
+  padding: 12px;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  text-transform: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: white;
+  border: none;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #00b8d4 0%, #0077aa 100%);
+  transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+  background: linear-gradient(135deg, #ccc 0%, #bbb 100%);
+}
+
+.errorAlert,
+.successAlert {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  animation: slideIn 0.3s ease-in;
+}
+
+.errorAlert {
+  border-left: 4px solid #f44336;
+}
+
+.successAlert {
+  border-left: 4px solid #4caf50;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.linkContainer {
+  text-align: center;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .link {
-  display: block;
-  text-align: center;
+  display: inline-block;
   text-decoration: none;
-  color: #1976d2;
-  margin-top: 8px;
+  color: #667eea;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  font-weight: 500;
 }
 
 .link:hover {
+  color: #764ba2;
   text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .paper {
+    padding: 24px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+  }
+
+  .form {
+    gap: 12px;
+  }
 }

@@ -1,12 +1,13 @@
 import e from 'express';
 import { IBookResponse } from '../interfaces/book.interface';
-import { BookFormat } from '../interfaces/book.interface';
+import { BookFormat, BookStockStatus } from '../interfaces/book.interface';
 
 export interface CreateBookDto  {
   title: string;
   author: string;
   basePrice: number;
   format: BookFormat;
+  stock?: number;
 }
 
 export interface UpdateBookDto {
@@ -14,6 +15,7 @@ export interface UpdateBookDto {
   author?: string;
   basePrice?: number;
   format?: BookFormat;
+  stock?: number;
 }
 
 export interface BookResponseDto {
@@ -25,22 +27,8 @@ export interface BookResponseDto {
     basePrice: number;
     format: BookFormat;
     price: number;
-    createdAt: Date;
-    updatedAt: Date;
-  };
-}
-
-export interface BooksResponseDto {
-  books: IBookResponse[];
-  count: number;
-}
-export interface BookResponseDto {
-  message: string;
-  book: {
-    id: string;
-    title: string;
-    author: string;
-    price: number;
+    stock: number;
+    status: BookStockStatus;
     createdAt: Date;
     updatedAt: Date;
   };

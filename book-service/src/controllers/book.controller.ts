@@ -18,6 +18,14 @@ export class BookController {
         });
         return;
       }
+
+      if (bookData.format === 'physical' && (bookData.stock === undefined || bookData.stock < 0)) {
+        res.status(400).json({
+          success: false,
+          error: 'Please provide a valid stock value for physical books'
+        });
+        return;
+      }
       const book = await BookService.createBook(bookData);
       let image = null;
 

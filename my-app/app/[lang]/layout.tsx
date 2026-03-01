@@ -1,5 +1,6 @@
 import "../globals.css"; 
 import Navbar from '../components/Navbar/Navbar'; 
+import ThemeRegistry from '../ThemeRegistry';
 
 export default async function RootLayout({
   children,
@@ -14,8 +15,10 @@ export default async function RootLayout({
   return (
     <html lang={lang} dir={direction}>
       <body>
-        <Navbar />
-        {children}
+        <ThemeRegistry>
+          <Navbar />
+          {children}
+        </ThemeRegistry>
       </body>
     </html>
   );

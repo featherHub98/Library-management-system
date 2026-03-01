@@ -1,91 +1,140 @@
 /* components/Navbar.module.css */
 
-/* AppBar Styles */
 .appBar {
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Toolbar Layout */
 .toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 8px 16px;
 }
 
-/* Logo / Brand */
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #1976d2; /* primary.main */
-  font-weight: bold;
+  color: white;
+  font-weight: 700;
   flex-grow: 1;
+  font-size: 1.25rem;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
 }
 
 .logoIcon {
-  margin-right: 8px;
-  color: #1976d2;
+  margin-right: 12px;
+  color: white;
+  font-size: 1.75rem;
 }
 
-/* Desktop Navigation Container */
 .desktopNav {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 }
 
-/* Hide desktop nav on mobile */
 @media (max-width: 899px) {
   .desktopNav {
     display: none;
   }
 }
 
-/* Mobile Menu Button (Hamburger) */
 .mobileMenuButton {
   display: none;
+  color: white;
 }
 
-/* Show hamburger on mobile */
 @media (max-width: 899px) {
   .mobileMenuButton {
-    display: block;
+    display: inline-flex;
   }
 }
 
-/* Navigation Buttons */
 .navButton {
-  border: 1px solid #1976d2;
-  color: #1976d2;
+  border: 2px solid white;
+  color: white;
+  text-transform: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .navButton:hover {
-  background-color: rgba(25, 118, 210, 0.04);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: white;
 }
 
-/* Drawer Content */
+.navLink {
+  color: white !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s, background-color 0.2s;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-transform: none;
+}
+
+.navLink:hover {
+  color: #00d4ff !important;
+  background-color: rgba(0, 212, 255, 0.1);
+}
+
 .drawerContent {
-  width: 250px;
-  text-align: center;
+  width: 280px;
+  padding: 16px;
+  background: #f5f5f5;
 }
 
 .drawerTitle {
   margin: 16px 0;
+  color: #0f3460;
+  font-weight: 700;
+  font-size: 1.25rem;
 }
 
 .drawerList {
   padding: 0;
+  margin-top: 16px;
 }
 
 .drawerListItem {
-  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.drawerListItem:hover {
+  background-color: rgba(102, 126, 234, 0.1);
 }
 
 .drawerLanguageItem {
   cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+
+.drawerLanguageItem:hover {
+  background-color: rgba(102, 126, 234, 0.1);
 }
 
 .activeLanguage {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(102, 126, 234, 0.2);
+  font-weight: 600;
+  border-left: 4px solid #667eea;
+  padding-left: 12px !important;
+}
+
+@media (max-width: 480px) {
+  .drawerContent {
+    width: 100%;
+  }
 }

@@ -28,6 +28,8 @@ interface Book {
   basePrice?: number;
   format?: 'ebook' | 'physical';
   price: number;
+  stock?: number;
+  status?: 'in_stock' | 'out_of_stock';
 }
 
 export default function AdminBooksPage() {
@@ -36,8 +38,8 @@ export default function AdminBooksPage() {
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [createModalOpen, setCreateModalOpen] = useState(false);
   const [editingBook, setEditingBook] = useState<Book | null>(null);
-  const [editForm, setEditForm] = useState({ title: '', author: '', basePrice: '', format: 'physical' });
-  const [createForm, setCreateForm] = useState({ title: '', author: '', basePrice: '', format: 'physical' });
+  const [editForm, setEditForm] = useState({ title: '', author: '', basePrice: '', format: 'physical', stock: '0' });
+  const [createForm, setCreateForm] = useState({ title: '', author: '', basePrice: '', format: 'physical', stock: '0' });
   const [bookings, setBookings] = useState<{ startDate: string; endDate: string }[]>([]);
   const [bookingDates, setBookingDates] = useState<{ start?: string; end?: string }>({});
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -91,6 +93,9 @@ export default function AdminBooksPage() {
     formData.append('author', createForm.author);
     formData.append('basePrice', createForm.basePrice.toString());
     formData.append('format', createForm.format);
+    if (createForm.format === 'physical') {
+      formData.append('stock', createForm.stock.toString());
+    }
     if (imageFile) {
       formData.append('image', imageFile);
     }
@@ -105,7 +110,7 @@ export default function AdminBooksPage() {
       if (response.ok) {
         setSuccess('Book created successfully');
         setCreateModalOpen(false);
-        setCreateForm({ title: '', author: '', basePrice: '', format: 'physical' });
+        setCreateForm({ title: '', author: '', basePrice: '', format: 'physical', stock: '0' });
         setImageFile(null);
         fetchBooks();
       } else {
@@ -189,6 +194,7 @@ export default function AdminBooksPage() {
       author: book.author,
       basePrice: book.basePrice?.toString() || '',
       format: book.format || 'physical',
+      stock: (book.stock ?? 0).toString(),
     });
     setBookingDates({});
     fetch(`/api/books/${book._id || book.id}/bookings`)
@@ -216,7 +222,6 @@ export default function AdminBooksPage() {
       });
       if (resp.ok) {
         setSuccess('Booking created');
-        // refresh bookings
         const data = await resp.json();
         setBookings(prev => [...prev, data.data]);
         setBookingDates({});
@@ -234,7 +239,7 @@ export default function AdminBooksPage() {
     setPage(0);
   };
 
-  const paginatedBooks = books; // server handles pagination
+  const paginatedBooks = books;
 
   if (loading) {
     return (
@@ -263,7 +268,6 @@ export default function AdminBooksPage() {
         </Button>
       </Box>
 
-      {/* search bar */}
       <Box mb={2}>
         <TextField
           label="Search"
@@ -293,6 +297,8 @@ export default function AdminBooksPage() {
               <StyledTableCell>Format</StyledTableCell>
               <StyledTableCell>Base Price</StyledTableCell>
               <StyledTableCell>Price</StyledTableCell>
+              <StyledTableCell>Stock</StyledTableCell>
+              <StyledTableCell>Status</StyledTableCell>
               <StyledTableCell align="center">Actions</StyledTableCell>
             </TableRow>
           </TableHead>
@@ -304,6 +310,8 @@ export default function AdminBooksPage() {
                 <TableCell>{book.format || '-'}</TableCell>
                 <TableCell>${book.basePrice?.toFixed(2) || '-'}</TableCell>
                 <TableCell>${book.price}</TableCell>
+                <TableCell>{book.format === 'physical' ? (book.stock ?? 0) : '-'}</TableCell>
+                <TableCell>{book.format === 'physical' ? (book.status === 'out_of_stock' ? 'Out of stock' : 'In stock') : '-'}</TableCell>
                 <TableCell align="center">
                   <IconButton
                     color="primary"
@@ -335,7 +343,6 @@ export default function AdminBooksPage() {
         />
       </TableContainer>
 
-      {/* Create Book Dialog */}
       <Dialog open={createModalOpen} onClose={() => setCreateModalOpen(false)} maxWidth="sm" fullWidth>
         <DialogTitle>Add New Book</DialogTitle>
         <DialogContent>
@@ -378,6 +385,17 @@ export default function AdminBooksPage() {
             <option value="physical">Physical</option>
             <option value="ebook">E-Book</option>
           </TextField>
+          {createForm.format === 'physical' && (
+            <TextField
+              margin="dense"
+              label="Stock"
+              type="number"
+              fullWidth
+              value={createForm.stock}
+              onChange={(e) => setCreateForm({ ...createForm, stock: e.target.value })}
+              sx={{ mb: 2 }}
+            />
+          )}
           <input
             type="file"
             accept="image/*"
@@ -391,7 +409,6 @@ export default function AdminBooksPage() {
         </DialogActions>
       </Dialog>
 
-      {/* Edit Book Dialog */}
       <Dialog open={editModalOpen} onClose={() => setEditModalOpen(false)} maxWidth="sm" fullWidth>
         <DialogTitle>Edit Book</DialogTitle>
         <DialogContent>
@@ -434,8 +451,18 @@ export default function AdminBooksPage() {
             <option value="physical">Physical</option>
             <option value="ebook">E-Book</option>
           </TextField>
+          {editForm.format === 'physical' && (
+            <TextField
+              margin="dense"
+              label="Stock"
+              type="number"
+              fullWidth
+              value={editForm.stock}
+              onChange={(e) => setEditForm({ ...editForm, stock: e.target.value })}
+              sx={{ mb: 2 }}
+            />
+          )}
 
-          {/* show bookings when physical */}
           {editForm.format === 'physical' && (
             <Box sx={{ mt: 2 }}>
               <Typography variant="subtitle1">Booked Periods</Typography>
@@ -451,7 +478,6 @@ export default function AdminBooksPage() {
                 </ul>
               )}
 
-              {/* quick booking form for admin */}
               <Box sx={{ mt: 2, display: 'flex', gap: 1, alignItems: 'center' }}>
                 <TextField
                   label="From"

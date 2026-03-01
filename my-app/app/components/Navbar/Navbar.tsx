@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams, usePathname, useRouter } from 'next/navigation';
 import {
@@ -10,6 +10,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import TranslateIcon from '@mui/icons-material/Translate';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import LogoutIcon from '@mui/icons-material/Logout';
 import styles from './Navbar.module.css';
 import en from '@/dictionaries/en.json'
 import fr from '@/dictionaries/fr.json'
@@ -27,6 +28,42 @@ export default function Navbar() {
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userRole, setUserRole] = useState<'admin' | 'public' | null>(null);
+
+  const decodeRoleFromToken = (token: string | null): 'admin' | 'public' | null => {
+    if (!token) return null;
+    
+    const parts = token.split('.');
+    if (parts.length < 2) return null;
+    
+    try {
+      const payloadBase64 = parts[1]
+        .replace(/-/g, '+')
+        .replace(/_/g, '/');
+      const padded = payloadBase64 + '='.repeat((4 - (payloadBase64.length % 4)) % 4);
+      const payload = JSON.parse(atob(padded)) as { role?: string };
+      return (payload.role === 'admin' || payload.role === 'public') ? (payload.role as 'admin' | 'public') : null;
+    } catch {
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const token = localStorage.getItem('authToken');
+        const role = decodeRoleFromToken(token);
+        setIsAuthenticated(!!token);
+        setUserRole(role);
+      } catch (error) {
+        console.error('Auth check error:', error);
+        setIsAuthenticated(false);
+        setUserRole(null);
+      }
+    };
+    checkAuth();
+  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -38,6 +75,23 @@ export default function Navbar() {
 
   const handleLanguageMenuClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/api/auth/logout', { method: 'POST' });
+      
+      if (response.ok) {
+        localStorage.removeItem('authToken');
+        setIsAuthenticated(false);
+        setMobileOpen(false);
+        router.push(`/${lang}/login`);
+      } else {
+        console.error('Logout failed');
+      }
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
   };
 
   const changeLocale = (newLocale: string) => {
@@ -56,12 +110,32 @@ export default function Navbar() {
   const navItems = [
     { label: t.home, href: `/${lang}` },
     { label: t.books, href: `/${lang}/books` },
-    { label: t.login, href: `/${lang}/login` },
-    { label: t.signup, href: `/${lang}/signup` },
+    ...(isAuthenticated ? [] : [
+      { label: t.login, href: `/${lang}/login` },
+      { label: t.signup, href: `/${lang}/signup` },
+    ]),
   ];
 
   const renderDesktopNav = () => (
     <Box className={styles.desktopNav}>
+      <Button
+        component={Link}
+        href={`/${lang}/books`}
+        className={styles.navLink}
+      >
+        {t.books}
+      </Button>
+
+      {userRole === 'admin' && (
+        <Button
+          component={Link}
+          href={`/${lang}/admin/books`}
+          className={styles.navLink}
+        >
+          Admin
+        </Button>
+      )}
+
       <IconButton
         color="inherit"
         onClick={handleLanguageMenuOpen}
@@ -69,14 +143,25 @@ export default function Navbar() {
         <TranslateIcon />
       </IconButton>
 
-      <Button
-        component={Link}
-        href={pathname.includes('/login') ? `/${lang}/signup` : `/${lang}/login`}
-        variant="outlined"
-        className={styles.navButton}
-      >
-        {pathname.includes('/login') ? t.signup : t.login}
-      </Button>
+      {isAuthenticated ? (
+        <Button
+          onClick={handleLogout}
+          variant="outlined"
+          className={styles.navButton}
+          startIcon={<LogoutIcon />}
+        >
+          {t.logout || 'Logout'}
+        </Button>
+      ) : (
+        <Button
+          component={Link}
+          href={pathname.includes('/login') ? `/${lang}/signup` : `/${lang}/login`}
+          variant="outlined"
+          className={styles.navButton}
+        >
+          {pathname.includes('/login') ? t.signup : t.login}
+        </Button>
+      )}
     </Box>
   );
 
@@ -96,6 +181,32 @@ export default function Navbar() {
             <ListItemText primary={item.label} />
           </ListItem>
         ))}
+
+        {userRole === 'admin' && (
+          <ListItem 
+            component={Link} 
+            href={`/${lang}/admin/books`}
+            className={styles.drawerListItem}
+          >
+            <ListItemText primary="Admin" />
+          </ListItem>
+        )}
+        
+        {isAuthenticated && (
+          <>
+            <Divider sx={{ my: 1 }} />
+            <ListItem 
+              onClick={(e) => {
+                e.stopPropagation();
+                handleLogout();
+              }}
+              className={styles.drawerListItem}
+              sx={{ cursor: 'pointer' }}
+            >
+              <ListItemText primary={t.logout || 'Logout'} />
+            </ListItem>
+          </>
+        )}
         
         <Divider sx={{ my: 1 }} />
         

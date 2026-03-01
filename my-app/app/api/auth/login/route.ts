@@ -14,21 +14,36 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify(body),
     });
 
-    if (!response.ok) {
-      const error = await response.json();
-      return NextResponse.json(error, { status: response.status });
+    const rawBody = await response.text();
+    let data: Record<string, unknown> = {};
+
+    if (rawBody) {
+      try {
+        data = JSON.parse(rawBody);
+      } catch {
+        data = { error: rawBody };
+      }
     }
 
-    const data = await response.json();
+    if (!response.ok) {
+      const errorPayload =
+        data && typeof data === 'object'
+          ? data
+          : { error: 'Login failed' };
+      return NextResponse.json(errorPayload, { status: response.status });
+    }
 
     const res = NextResponse.json(data, { status: 200 });
     
-    if (data.token) {
-      res.cookies.set('authToken', data.token, {
+    const token = typeof data.token === 'string' ? data.token : null;
+
+    if (token) {
+      res.cookies.set('authToken', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
-        maxAge: 7 * 24 * 60 * 60, // 7 days
+        sameSite: 'lax',
+        maxAge: 7 * 24 * 60 * 60,
+        path: '/',
       });
     }
 

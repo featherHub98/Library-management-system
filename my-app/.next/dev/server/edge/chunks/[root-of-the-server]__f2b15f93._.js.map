@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/middleware.ts"],"sourcesContent":["import { NextResponse } from 'next/server'\r\nimport type { NextRequest } from 'next/server'\r\n\r\nexport function middleware(request: NextRequest) {\r\n  const defaultLocale = 'en'\r\n  const pathname = request.nextUrl.pathname\r\n  \r\n  if (pathname.startsWith('/en') || pathname.startsWith('/fr') || pathname.startsWith('/ar')) {\r\n    return NextResponse.next()\r\n  }\r\n  \r\n  return NextResponse.redirect(new URL(`/${defaultLocale}${pathname}`, request.url))\r\n}\r\n\r\nexport const config = {\r\n  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']\r\n}"],"names":[],"mappings":";;;;;;AAAA;AAAA;;AAGO,SAAS,WAAW,OAAoB;IAC7C,MAAM,gBAAgB;IACtB,MAAM,WAAW,QAAQ,OAAO,CAAC,QAAQ;IAEzC,IAAI,SAAS,UAAU,CAAC,UAAU,SAAS,UAAU,CAAC,UAAU,SAAS,UAAU,CAAC,QAAQ;QAC1F,OAAO,gMAAY,CAAC,IAAI;IAC1B;IAEA,OAAO,gMAAY,CAAC,QAAQ,CAAC,IAAI,IAAI,CAAC,CAAC,EAAE,gBAAgB,UAAU,EAAE,QAAQ,GAAG;AAClF;AAEO,MAAM,SAAS;IACpB,SAAS;QAAC;KAAoD;AAChE"}}]
+}

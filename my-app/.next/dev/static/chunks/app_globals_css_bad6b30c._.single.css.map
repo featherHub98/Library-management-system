@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/globals.css"],"sourcesContent":["/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */\n.sticky {\n  position: sticky;\n}\n.container {\n  width: 100%;\n}\n.flex {\n  display: flex;\n}\n.grid {\n  display: grid;\n}\n.shrink {\n  flex-shrink: 1;\n}\nhtml {\n  background-color: #f8f9fa !important;\n}\nbody {\n  background-color: #f8f9fa !important;\n  color: #333;\n  margin: 0;\n  padding: 0;\n}\n* {\n  background-color: inherit;\n}\ninput:focus {\n  outline: none;\n}"],"names":[],"mappings":"AACA;;;;AAGA;;;;AAGA;;;;AAGA;;;;AAGA;;;;AAGA;;;;AAGA;;;;;;;AAMA;;;;AAGA"}}]
+}

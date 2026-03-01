@@ -69,6 +69,3 @@ export async function DELETE(
     return NextResponse.json({ error: 'Failed to delete book' }, { status: 500 });
   }
 }
-    return NextResponse.json({ error: 'Failed to delete book' }, { status: 500 });
-  }
-}

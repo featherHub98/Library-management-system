@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/projects/hamma%20pfe/Library-management-system/my-app/app/api/auth/logout/route.ts"],"sourcesContent":["import { NextRequest, NextResponse } from 'next/server';\r\n\r\nexport async function POST(request: NextRequest) {\r\n  try {\r\n    const response = NextResponse.json({ success: true, message: 'Logged out successfully' });\r\n    response.cookies.set('authToken', '', {\r\n      httpOnly: true,\r\n      secure: process.env.NODE_ENV === 'production',\r\n      sameSite: 'lax',\r\n      maxAge: 0,\r\n      path: '/',\r\n    });\r\n\r\n    return response;\r\n  } catch (error) {\r\n    console.error('Logout error:', error);\r\n    return NextResponse.json(\r\n      { error: 'Logout failed' },\r\n      { status: 500 }\r\n    );\r\n  }\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe,KAAK,OAAoB;IAC7C,IAAI;QACF,MAAM,WAAW,gJAAY,CAAC,IAAI,CAAC;YAAE,SAAS;YAAM,SAAS;QAA0B;QACvF,SAAS,OAAO,CAAC,GAAG,CAAC,aAAa,IAAI;YACpC,UAAU;YACV,QAAQ,oDAAyB;YACjC,UAAU;YACV,QAAQ;YACR,MAAM;QACR;QAEA,OAAO;IACT,EAAE,OAAO,OAAO;QACd,QAAQ,KAAK,CAAC,iBAAiB;QAC/B,OAAO,gJAAY,CAAC,IAAI,CACtB;YAAE,OAAO;QAAgB,GACzB;YAAE,QAAQ;QAAI;IAElB;AACF"}}]
+}

@@ -1,0 +1,33 @@
+/* [project]/app/[lang]/signup/signup.module.css [app-client] (css) */
+.signup-module__jdUmRW__main {
+  background-color: #f5f5f5;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+}
+
+.signup-module__jdUmRW__paper {
+  width: 100%;
+  max-width: 400px;
+  padding: 32px;
+}
+
+.signup-module__jdUmRW__title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.signup-module__jdUmRW__link {
+  text-align: center;
+  color: #1976d2;
+  margin-top: 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.signup-module__jdUmRW__link:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=app_%5Blang%5D_signup_signup_module_3e8fafcb.css.map*/

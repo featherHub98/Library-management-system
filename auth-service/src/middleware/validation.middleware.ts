@@ -10,6 +10,9 @@ export const validateSignup = [
     .normalizeEmail(),
   body('password')
     .isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
+  body('role')
+    .optional()
+    .isIn(['admin', 'public']).withMessage('Role must be admin or public'),
 
   (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req);

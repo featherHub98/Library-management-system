@@ -1,0 +1,141 @@
+/* [project]/app/components/Navbar/Navbar.module.css [app-client] (css) */
+.Navbar-module__4IqnvW__appBar {
+  z-index: 1000;
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 12px #00d4ff33;
+}
+
+.Navbar-module__4IqnvW__toolbar {
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  display: flex;
+}
+
+.Navbar-module__4IqnvW__logo {
+  color: #fff;
+  flex-grow: 1;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity .3s;
+  display: flex;
+}
+
+.Navbar-module__4IqnvW__logo:hover {
+  opacity: .9;
+}
+
+.Navbar-module__4IqnvW__logoIcon {
+  color: #fff;
+  margin-right: 12px;
+  font-size: 1.75rem;
+}
+
+.Navbar-module__4IqnvW__desktopNav {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+
+@media (max-width: 899px) {
+  .Navbar-module__4IqnvW__desktopNav {
+    display: none;
+  }
+}
+
+.Navbar-module__4IqnvW__mobileMenuButton {
+  color: #fff;
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .Navbar-module__4IqnvW__mobileMenuButton {
+    display: inline-flex;
+  }
+}
+
+.Navbar-module__4IqnvW__navButton {
+  color: #fff;
+  text-transform: none;
+  border: 2px solid #fff;
+  font-weight: 600;
+  transition: all .3s;
+}
+
+.Navbar-module__4IqnvW__navButton:hover {
+  background-color: #fff3;
+  border-color: #fff;
+}
+
+.Navbar-module__4IqnvW__navLink {
+  text-transform: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .2s, background-color .2s;
+  color: #fff !important;
+}
+
+.Navbar-module__4IqnvW__navLink:hover {
+  background-color: #00d4ff1a;
+  color: #00d4ff !important;
+}
+
+.Navbar-module__4IqnvW__drawerContent {
+  background: #f5f5f5;
+  width: 280px;
+  padding: 16px;
+}
+
+.Navbar-module__4IqnvW__drawerTitle {
+  color: #0f3460;
+  margin: 16px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.Navbar-module__4IqnvW__drawerList {
+  margin-top: 16px;
+  padding: 0;
+}
+
+.Navbar-module__4IqnvW__drawerListItem {
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background-color .2s;
+}
+
+.Navbar-module__4IqnvW__drawerListItem:hover {
+  background-color: #667eea1a;
+}
+
+.Navbar-module__4IqnvW__drawerLanguageItem {
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all .2s;
+}
+
+.Navbar-module__4IqnvW__drawerLanguageItem:hover {
+  background-color: #667eea1a;
+}
+
+.Navbar-module__4IqnvW__activeLanguage {
+  background-color: #667eea33;
+  border-left: 4px solid #667eea;
+  font-weight: 600;
+  padding-left: 12px !important;
+}
+
+@media (max-width: 480px) {
+  .Navbar-module__4IqnvW__drawerContent {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=app_components_Navbar_Navbar_module_css_bad6b30c._.single.css.map*/

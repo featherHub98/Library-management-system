@@ -7,6 +7,7 @@ export interface SignupDto {
   username: string;
   email: string;
   password: string;
+  role?: 'admin' | 'public';
 }
 
 export interface ResetPasswordDto {
@@ -25,5 +26,6 @@ export interface AuthResponseDto {
     id: string;
     username: string;
     email: string;
+    role: 'admin' | 'public';
   };
 }

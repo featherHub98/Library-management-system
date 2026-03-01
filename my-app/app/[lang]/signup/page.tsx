@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
@@ -9,8 +9,7 @@ import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 import Alert from '@mui/material/Alert';
 import axios, { AxiosError } from 'axios';
-import { useParams } from 'next/navigation';
-import axios from 'axios';
+import { useParams, useRouter } from 'next/navigation';
 import styles from './signup.module.css';
 import en from '@/dictionaries/en.json'
 import fr from '@/dictionaries/fr.json'
@@ -26,6 +25,7 @@ interface FormType {
 
 export default function Signup() {
   const params = useParams();
+  const router = useRouter();
   const lang = (params?.lang as string) || 'en';
   const t = dictionaries[lang as keyof typeof dictionaries] || dictionaries.en;
 
@@ -38,6 +38,13 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      router.push(`/${lang}`);
+    }
+  }, [lang, router]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -45,8 +52,18 @@ export default function Signup() {
 
     try {
       const result = await axios.post('/api/auth/signup', formData);
-      setSuccess(true);
-      console.log('Signup successful:', result.data);
+      const token = result.data.token;
+      
+      if (token) {
+        localStorage.setItem('authToken', token);
+        setSuccess(true);
+        console.log('Signup successful:', result.data);
+        setTimeout(() => {
+          router.push(`/${lang}`);
+        }, 500);
+      } else {
+        setError('No token received from server');
+      }
     } catch (error: unknown) {
       let message = 'Signup failed. Please try again.';
       if (axios.isAxiosError(error)) {
@@ -72,18 +89,18 @@ export default function Signup() {
         </Typography>
 
         {error && (
-          <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError(null)}>
+          <Alert severity="error" className={styles.errorAlert} onClose={() => setError(null)}>
             {error}
           </Alert>
         )}
 
         {success && (
-          <Alert severity="success" sx={{ mb: 2 }}>
+          <Alert severity="success" className={styles.successAlert}>
             Signup successful! Redirecting...
           </Alert>
         )}
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <Stack spacing={2}>
             <TextField
               label={t.username}
@@ -129,15 +146,18 @@ export default function Signup() {
               size="large" 
               fullWidth
               disabled={loading || success}
+              className={styles.submitButton}
             >
               {loading ? 'Creating account...' : t.signup}
             </Button>
-
-            <Link href={`/${lang}/login`} className={styles.link}>
-              {t.alreadyHaveAccount}
-            </Link>
           </Stack>
         </form>
+
+        <div className={styles.linkContainer}>
+          <Link href={`/${lang}/login`} className={styles.link}>
+            {t.alreadyHaveAccount}
+          </Link>
+        </div>
       </Paper>
     </main>
   );

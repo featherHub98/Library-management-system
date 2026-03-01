@@ -45,9 +45,9 @@ export default function ForgotPage() {
         <Typography variant="h5" component="h1" className={styles.title}>
           {t.forgotTitle || 'Forgot Password'}
         </Typography>
-        {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
-        {success && <Alert severity="success" sx={{ mb: 2 }}>{success}</Alert>}
-        <form onSubmit={handleSubmit}>
+        {error && <Alert severity="error" className={styles.errorAlert}>{error}</Alert>}
+        {success && <Alert severity="success" className={styles.successAlert}>{success}</Alert>}
+        <form onSubmit={handleSubmit} className={styles.form}>
           <TextField
             label={t.email}
             type="email"
@@ -57,9 +57,14 @@ export default function ForgotPage() {
             disabled={loading || !!success}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            sx={{ mb: 2 }}
           />
-          <Button type="submit" variant="contained" fullWidth disabled={loading || !!success}>
+          <Button 
+            type="submit" 
+            variant="contained" 
+            fullWidth 
+            disabled={loading || !!success}
+            className={styles.submitButton}
+          >
             {loading ? 'Sending...' : (t.forgotButton || 'Send code')}
           </Button>
         </form>

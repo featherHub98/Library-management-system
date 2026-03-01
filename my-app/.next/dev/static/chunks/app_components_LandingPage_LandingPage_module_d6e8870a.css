@@ -1,0 +1,185 @@
+/* [project]/app/components/LandingPage/LandingPage.module.css [app-client] (css) */
+.LandingPage-module__dUlGxG__landingContainer {
+  background: #f8f9fa;
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+}
+
+.LandingPage-module__dUlGxG__heroSection {
+  color: #fff;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .LandingPage-module__dUlGxG__heroSection {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.LandingPage-module__dUlGxG__heroTitle {
+  color: #fff;
+  z-index: 1;
+  margin-bottom: 16px;
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  position: relative;
+}
+
+.LandingPage-module__dUlGxG__heroSubtitle {
+  color: #ffffffe6;
+  z-index: 1;
+  margin-bottom: 32px;
+  font-size: 1.25rem;
+  font-weight: 300;
+  position: relative;
+}
+
+.LandingPage-module__dUlGxG__heroButtons {
+  z-index: 1;
+  flex-wrap: wrap;
+  gap: 16px;
+  display: flex;
+  position: relative;
+}
+
+.LandingPage-module__dUlGxG__heroImagePlaceholder {
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  border-radius: 16px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  box-shadow: 0 10px 40px #00d4ff33;
+}
+
+.LandingPage-module__dUlGxG__mapSection {
+  background: #fff;
+  padding: 80px 0;
+  position: relative;
+}
+
+.LandingPage-module__dUlGxG__locationMarkers {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.LandingPage-module__dUlGxG__mapIframe {
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  height: 500px;
+  box-shadow: 0 4px 20px #0000001a;
+}
+
+.LandingPage-module__dUlGxG__featuresSection {
+  background: #f8f9fa;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.LandingPage-module__dUlGxG__featuresTitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 60px;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.LandingPage-module__dUlGxG__featureCard {
+  text-align: center;
+  background: #fff;
+  border: none;
+  border-radius: 12px;
+  height: 100%;
+  padding: 32px 24px;
+  transition: transform .3s, box-shadow .3s;
+  box-shadow: 0 4px 15px #0000001a;
+}
+
+.LandingPage-module__dUlGxG__featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px #00d4ff33;
+}
+
+.LandingPage-module__dUlGxG__featureIconWrapper {
+  justify-content: center;
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.LandingPage-module__dUlGxG__featureCardTitle {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.LandingPage-module__dUlGxG__featureDescription {
+  color: #666;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.LandingPage-module__dUlGxG__footer {
+  color: #fff;
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  border-top: 2px solid #00d4ff4d;
+  margin-top: auto;
+  padding: 32px 16px;
+}
+
+.LandingPage-module__dUlGxG__footerText {
+  text-align: center;
+  color: #fffc;
+  font-size: .875rem;
+  font-weight: 300;
+}
+
+@media (max-width: 899px) {
+  .LandingPage-module__dUlGxG__heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .LandingPage-module__dUlGxG__heroSection {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .LandingPage-module__dUlGxG__mapIframe {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .LandingPage-module__dUlGxG__heroTitle {
+    font-size: 2rem;
+  }
+
+  .LandingPage-module__dUlGxG__heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .LandingPage-module__dUlGxG__heroButtons {
+    flex-direction: column;
+  }
+
+  .LandingPage-module__dUlGxG__mapIframe {
+    height: 250px;
+  }
+
+  .LandingPage-module__dUlGxG__featureCard {
+    padding: 24px 16px;
+  }
+}
+
+/*# sourceMappingURL=app_components_LandingPage_LandingPage_module_d6e8870a.css.map*/

@@ -5,7 +5,7 @@ export class AuthController {
 
   async register(req: Request, res: Response): Promise<void> {
     try {
-      const { username, email, password } = req.body;
+      const { username, email, password, role } = req.body;
 
       if (!username || !email || !password) {
         res.status(400).json({ 
@@ -21,11 +21,10 @@ export class AuthController {
         return;
       }
 
-      const user = await AuthService.register({ username, email, password });
+      const result = await AuthService.register({ username, email, password, role });
       res.status(201).json({ 
         message: 'User created successfully', 
-        userId: user.id,
-        token: user.token
+        ...result
       });
     } catch (error: unknown) {
       console.error('Register error:', error);

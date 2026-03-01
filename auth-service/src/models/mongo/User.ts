@@ -6,6 +6,7 @@ export type UserAttributes = {
   username: string;
   password: string;
   email: string;
+  role: 'admin' | 'public';
   resetCode?: string;
   resetExpires?: Date;
 };
@@ -27,6 +28,12 @@ const userSchema = new Schema<UserDocument>(
     password: { 
       type: String, 
       required: true 
+    },
+    role: {
+      type: String,
+      enum: ['admin', 'public'],
+      required: true,
+      default: 'public'
     },
     resetCode: {
       type: String,

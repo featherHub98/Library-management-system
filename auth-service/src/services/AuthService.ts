@@ -7,7 +7,29 @@ export class AuthService {
 
   async register(userData: SignupDto): Promise<any> {
     const hashedPassword = await bcrypt.hash(userData.password, 10);
-    return UserModel.create({ username: userData.username, email: userData.email, password: hashedPassword });
+    const role = userData.role === 'admin' ? 'admin' : 'public';
+    const user = await UserModel.create({
+      username: userData.username,
+      email: userData.email,
+      password: hashedPassword,
+      role
+    });
+
+    const token = jwt.sign(
+      { id: user.id, username: user.username, role: user.role },
+      process.env.JWT_SECRET || 'super-secret-jwt-key',
+      { expiresIn: '1h' }
+    );
+
+    return {
+      token,
+      user: {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        role: user.role,
+      }
+    };
   };
 
   async login(credentials: LoginDto): Promise<any> {
@@ -23,14 +45,14 @@ export class AuthService {
     }
 
     const token = jwt.sign(
-      { id: user.id, username: user.username }, 
+      { id: user.id, username: user.username, role: user.role }, 
       process.env.JWT_SECRET || 'super-secret-jwt-key', 
       { expiresIn: '1h' }
     );
 
     return { 
       token, 
-      user: { id: user.id, username: user.username } 
+      user: { id: user.id, username: user.username, email: user.email, role: user.role } 
     };
   };
 

@@ -9,6 +9,10 @@ export const validateBookCreation = [
     .toFloat(),
   body('format')
     .isIn(['ebook','physical']).withMessage('Format must be ebook or physical'),
+  body('stock')
+    .optional()
+    .isInt({ min: 0 }).withMessage('Stock must be a non-negative integer')
+    .toInt(),
   
   (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req);
@@ -32,6 +36,10 @@ export const validateBookUpdate = [
   body('format')
     .optional()
     .isIn(['ebook','physical']).withMessage('Format must be ebook or physical'),
+  body('stock')
+    .optional()
+    .isInt({ min: 0 }).withMessage('Stock must be a non-negative integer')
+    .toInt(),
   
   (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req);
