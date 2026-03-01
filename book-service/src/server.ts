@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import consul from 'consul';
 import { connectDB, connectPostgres } from './config/database';
 import bookRoutes from './routes/book.routes';
+import authorRoutes from './routes/author.routes';
 import { errorHandler } from './middleware/error.middleware';
 import BookImage from './models/postgres/BookImage';
 
@@ -43,6 +44,7 @@ class Server {
 
  
     this.app.use('/books', bookRoutes);
+    this.app.use('/authors', authorRoutes);
 
    
   }

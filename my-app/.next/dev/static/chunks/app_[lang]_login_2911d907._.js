@@ -2,9 +2,16 @@
 "[project]/app/[lang]/login/login.module.css [app-client] (css module)", ((__turbopack_context__) => {
 
 __turbopack_context__.v({
+  "errorAlert": "login-module___zsMCa__errorAlert",
+  "form": "login-module___zsMCa__form",
+  "inputField": "login-module___zsMCa__inputField",
   "link": "login-module___zsMCa__link",
+  "linkContainer": "login-module___zsMCa__linkContainer",
   "main": "login-module___zsMCa__main",
   "paper": "login-module___zsMCa__paper",
+  "slideIn": "login-module___zsMCa__slideIn",
+  "submitButton": "login-module___zsMCa__submitButton",
+  "successAlert": "login-module___zsMCa__successAlert",
   "title": "login-module___zsMCa__title",
 });
 }),
@@ -124,9 +131,7 @@ function Login() {
                 }, this),
                 error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Alert$2f$Alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     severity: "error",
-                    sx: {
-                        mb: 2
-                    },
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f5b$lang$5d2f$login$2f$login$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].errorAlert,
                     onClose: ()=>setError(null),
                     children: error
                 }, void 0, false, {
@@ -136,9 +141,7 @@ function Login() {
                 }, this),
                 success && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Alert$2f$Alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     severity: "success",
-                    sx: {
-                        mb: 2
-                    },
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f5b$lang$5d2f$login$2f$login$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].successAlert,
                     children: "Login successful! Redirecting..."
                 }, void 0, false, {
                     fileName: "[project]/app/[lang]/login/page.tsx",
@@ -147,6 +150,7 @@ function Login() {
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                     onSubmit: handleSubmit,
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f5b$lang$5d2f$login$2f$login$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].form,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Stack$2f$Stack$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         spacing: 2,
                         children: [
@@ -189,28 +193,11 @@ function Login() {
                                 size: "large",
                                 fullWidth: true,
                                 disabled: loading || success,
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f5b$lang$5d2f$login$2f$login$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].submitButton,
                                 children: loading ? 'Logging in...' : t.login
                             }, void 0, false, {
                                 fileName: "[project]/app/[lang]/login/page.tsx",
                                 lineNumber: 128,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                href: `/${lang}/signup`,
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f5b$lang$5d2f$login$2f$login$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].link,
-                                children: t.noAccount
-                            }, void 0, false, {
-                                fileName: "[project]/app/[lang]/login/page.tsx",
-                                lineNumber: 138,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                href: `/${lang}/forgot`,
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f5b$lang$5d2f$login$2f$login$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].link,
-                                children: t.forgotLink || 'Forgot password?'
-                            }, void 0, false, {
-                                fileName: "[project]/app/[lang]/login/page.tsx",
-                                lineNumber: 141,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -222,6 +209,33 @@ function Login() {
                 }, void 0, false, {
                     fileName: "[project]/app/[lang]/login/page.tsx",
                     lineNumber: 101,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f5b$lang$5d2f$login$2f$login$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].linkContainer,
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            href: `/${lang}/signup`,
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f5b$lang$5d2f$login$2f$login$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].link,
+                            children: t.noAccount
+                        }, void 0, false, {
+                            fileName: "[project]/app/[lang]/login/page.tsx",
+                            lineNumber: 142,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            href: `/${lang}/forgot`,
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f5b$lang$5d2f$login$2f$login$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].link,
+                            children: t.forgotLink || 'Forgot password?'
+                        }, void 0, false, {
+                            fileName: "[project]/app/[lang]/login/page.tsx",
+                            lineNumber: 145,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/[lang]/login/page.tsx",
+                    lineNumber: 141,
                     columnNumber: 9
                 }, this)
             ]

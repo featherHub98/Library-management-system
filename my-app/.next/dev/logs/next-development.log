@@ -1,116 +1,18 @@
-[00:01:04.762] Server  LOG     ○ Compiling proxy ...
-[00:01:15.422] Server  LOG     ✓ Ready in 56.9s
-[00:01:58.302] Server  LOG     ○ Compiling /[lang] ...
-[00:02:18.178] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:34.115] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:59.356] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:32.822] Server  LOG     ✓ Compiled in 19.5s
-[00:06:35.330] Server  LOG     ✓ Compiled in 85ms
-[00:09:20.382] Server  LOG     ✓ Compiled in 38.7s
-[00:09:22.486] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:49.934] Server  LOG     ✓ Finished filesystem cache database compaction in 19.5s
-[00:09:50.647] Server  LOG     ✓ Finished writing to filesystem cache in 19.7s
-[00:09:59.835] Server  LOG     ✓ Compiled in 106ms
-[00:11:17.642] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:23.198] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:33.531] Server  LOG     ✓ Compiled in 5.5s
-[00:12:14.437] Server  LOG     ✓ Compiled in 46ms
-[00:12:47.392] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:57.360] Server  LOG     ✓ Compiled in 50ms
-[00:15:36.362] Server  LOG     ○ Compiling /_not-found/page ...
-[00:15:50.152] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:27.920] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:37.406] Server  LOG     ○ Compiling /[lang]/login ...
-[00:16:50.989] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:40.735] Browser ERROR   Login error: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"data":"{\"username\":\"admin\",\"password\":\"admin123\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"legacyInterceptorReqResOrdering":true,"silentJSONParsing":true},"url":"/api/auth/login","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10379:16)\n    at XMLHttpRequest.onloadend (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10897:174)\n    at Axios.request (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:11703:49)\n    at async handleSubmit (http://localhost:3000/_next/static/chunks/app_%5Blang%5D_login_2911d907._.js:84:28)","status":401}
-[00:19:02.827] Browser ERROR   Login error: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"data":"{\"username\":\"admin\",\"password\":\"secret\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"legacyInterceptorReqResOrdering":true,"silentJSONParsing":true},"url":"/api/auth/login","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10379:16)\n    at XMLHttpRequest.onloadend (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10897:174)\n    at Axios.request (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:11703:49)\n    at async handleSubmit (http://localhost:3000/_next/static/chunks/app_%5Blang%5D_login_2911d907._.js:84:28)","status":401}
-[00:19:08.700] Browser ERROR   Login error: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"data":"{\"username\":\"admin\",\"password\":\"admin123\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"legacyInterceptorReqResOrdering":true,"silentJSONParsing":true},"url":"/api/auth/login","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10379:16)\n    at XMLHttpRequest.onloadend (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10897:174)\n    at Axios.request (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:11703:49)\n    at async handleSubmit (http://localhost:3000/_next/static/chunks/app_%5Blang%5D_login_2911d907._.js:84:28)","status":401}
-[00:19:18.074] Browser LOG     Login successful: {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OWRiYjg2NjIwY2NjYjA2MjAyN2E1YiIsInVzZXJuYW1lIjoidXNlciIsInJvbGUiOiJwdWJsaWMiLCJpYXQiOjE3NzIyMjA4MDQsImV4cCI6MTc3MjIyNDQwNH0.y8FMFnZcWVZbalJx8U3VqF_JdB6vkgu-LsceXnwlA7Y","user":{"email":"user@gmail.com","id":"699dbb86620cccb062027a5b","role":"public","username":"user"}}
-[00:20:27.837] Server  LOG     ○ Compiling /[lang]/books ...
-[00:20:33.325] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:57.315] Server  LOG     ○ Compiling /api/auth/logout ...
-[00:27:19.128] Browser ERROR   Login error: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"data":"{\"username\":\"admin\",\"password\":\"secret\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"legacyInterceptorReqResOrdering":true,"silentJSONParsing":true},"url":"/api/auth/login","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10379:16)\n    at XMLHttpRequest.onloadend (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10897:174)\n    at Axios.request (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:11703:49)\n    at async handleSubmit (http://localhost:3000/_next/static/chunks/app_%5Blang%5D_login_2911d907._.js:84:28)","status":401}
-[00:27:26.835] Browser ERROR   Login error: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"data":"{\"username\":\"admin\",\"password\":\"admin123\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"legacyInterceptorReqResOrdering":true,"silentJSONParsing":true},"url":"/api/auth/login","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10379:16)\n    at XMLHttpRequest.onloadend (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10897:174)\n    at Axios.request (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:11703:49)\n    at async handleSubmit (http://localhost:3000/_next/static/chunks/app_%5Blang%5D_login_2911d907._.js:84:28)","status":401}
-[00:27:56.024] Browser LOG     Login successful: {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTFmMzdjZmY3MGJmZWZmNjJiYmM4YyIsInVzZXJuYW1lIjoiYWRtaW4yIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzcyMjIxMzIyLCJleHAiOjE3NzIyMjQ5MjJ9.RbuDa1vBWDq4XVY0JOM8aPu9sGqg-xtp-iAJcXkMNQk","user":{"email":"admin@library.com","id":"69a1f37cff70bfeff62bbc8c","role":"admin","username":"admin2"}}
-[00:28:21.623] Server  LOG     ○ Compiling /[lang]/admin/books ...
-[00:28:29.428] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:17.109] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:34:44.489] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:11.199] Server  LOG     ✓ Compiled in 4.5s
-[00:41:46.933] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:42:56.097] Server  LOG     ✓ Compiled in 294ms
-[00:43:15.954] Server  LOG     ✓ Compiled in 1504ms
-[00:43:25.515] Server  LOG     ✓ Compiled in 300ms
-[00:43:38.907] Server  LOG     ✓ Compiled in 4.9s
-[00:43:39.284] Browser ERROR   ./app/components/Navbar/Navbar.tsx:195:11
-Parsing ecmascript source code failed
-  193 |         )}
-  194 |           </ListItem>
-> 195 |         ))}
-      |           ^
-  196 |         
-  197 |         {isAuthenticated && (
-  198 |           <>
+[00:02:43.863] Server  LOG     ○ Compiling proxy ...
+[00:03:18.305] Server  LOG     ✓ Ready in 143.2s
+[00:05:43.403] Server  LOG     ○ Compiling /[lang] ...
+[00:06:41.822] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:41.271] Server  LOG     ○ Compiling /[lang]/books ...
+[00:09:07.364] Server  LOG     ○ Compiling /[lang]/authors ...
+[00:09:53.921] Browser WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
 
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:09:53.921] Browser WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
 
-Import trace:
-  Server Component:
-    ./app/components/Navbar/Navbar.tsx
-    ./app/[lang]/layout.tsx
-[00:43:51.400] Server  LOG     ✓ Compiled in 685ms
-[00:43:52.277] Browser ERROR   ./app/components/Navbar/Navbar.tsx:195:11
-Parsing ecmascript source code failed
-  193 |         )}
-  194 |           </ListItem>
-> 195 |         ))}
-      |           ^
-  196 |         
-  197 |         {isAuthenticated && (
-  198 |           <>
+[00:09:53.921] Browser WARN    MUI Grid: The `sm` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
 
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./app/components/Navbar/Navbar.tsx
-    ./app/[lang]/layout.tsx
-[00:44:01.463] Browser ERROR   ./app/components/Navbar/Navbar.tsx:195:11
-Parsing ecmascript source code failed
-  193 |         )}
-  194 |           </ListItem>
-> 195 |         ))}
-      |           ^
-  196 |         
-  197 |         {isAuthenticated && (
-  198 |           <>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./app/components/Navbar/Navbar.tsx
-    ./app/[lang]/layout.tsx
-[00:44:37.276] Browser ERROR   ./app/components/Navbar/Navbar.tsx:195:11
-Parsing ecmascript source code failed
-  193 |         )}
-  194 |           </ListItem>
-> 195 |         ))}
-      |           ^
-  196 |         
-  197 |         {isAuthenticated && (
-  198 |           <>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./app/components/Navbar/Navbar.tsx
-    ./app/[lang]/layout.tsx
-[00:44:41.289] Server  LOG     ✓ Compiled in 164ms
-[00:44:54.985] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:45:01.852] Server  LOG     ○ Compiling /[lang]/books ...
-[00:46:30.023] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:47:16.688] Server  LOG     ✓ Compiled in 41ms
-[00:47:21.397] Server  LOG     ✓ Compiled in 51ms
-[00:48:02.277] Server  LOG     ✓ Compiled in 5.6s
+[00:10:46.478] Server  ERROR   Error creating author: TypeError: Content-Type was not one of "multipart/form-data" or "application/x-www-form-urlencoded".
+[00:10:54.693] Server  LOG     ○ Compiling /[lang]/login ...
+[00:13:26.678] Browser ERROR   Login error: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"data":"{\"username\":\"admin1\",\"password\":\"admin123\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"legacyInterceptorReqResOrdering":true,"silentJSONParsing":true},"url":"/api/auth/login","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10379:16)\n    at XMLHttpRequest.onloadend (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10897:174)\n    at Axios.request (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:11703:49)\n    at async handleSubmit (http://localhost:3000/_next/static/chunks/app_%5Blang%5D_login_2911d907._.js:91:28)","status":401}
+[00:17:12.114] Browser LOG     Login successful: {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTFmMzdjZmY3MGJmZWZmNjJiYmM4YyIsInVzZXJuYW1lIjoiYWRtaW4yIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzcyMzk3Mzg4LCJleHAiOjE3NzI0MDA5ODh9.2y7ez-4XbStSRXwEM0Npatma6ZwB_OlTuPIE-PKVMRc","user":{"email":"admin@library.com","id":"69a1f37cff70bfeff62bbc8c","role":"admin","username":"admin2"}}
+[00:19:37.817] Server  LOG     ○ Compiling /[lang]/admin/books ...
+[00:19:45.303] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

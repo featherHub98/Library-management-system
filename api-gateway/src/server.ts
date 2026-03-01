@@ -151,6 +151,39 @@ app.use("/api/books", async (req, res, next) => {
   }
 });
 
+app.use("/api/authors", async (req, res, next) => {
+  try {
+    const target = await getServiceUrl("book-service");
+
+    console.log(`Gateway routing /api/authors -> ${target}`);
+
+    return createProxyMiddleware({
+      target,
+      changeOrigin: true,
+      pathRewrite: {
+        "^/api/authors": "/authors",
+      },
+      timeout: 30000, // 30 seconds
+      proxyTimeout: 30000,
+      logLevel: "warn",
+      onError: (err, req, res) => {
+        console.error("Author service proxy error:", err.message);
+        res.status(503).json({ 
+          error: "Author service unavailable",
+          details: err.message
+        });
+      }
+    })(req, res, next);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error("Proxy error:", message);
+    return res.status(503).json({ 
+      error: message,
+      details: "Author service is unavailable. Please ensure all services are running."
+    });
+  }
+});
+
 const server = app.listen(PORT, async () => {
   console.log(`API Gateway running on port ${PORT}`);
   console.log(`Service URLs (fallback):`);

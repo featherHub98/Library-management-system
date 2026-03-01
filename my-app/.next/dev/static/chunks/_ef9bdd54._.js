@@ -20,13 +20,13 @@ __turbopack_context__.v({
 }),
 "[project]/dictionaries/en.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v({"appName":"Library App","welcome":"Welcome","hello":"Hello","goodbye":"Goodbye","yes":"Yes","no":"No","ok":"OK","cancel":"Cancel","confirm":"Confirm","save":"Save","delete":"Delete","edit":"Edit","update":"Update","submit":"Submit","search":"Search","loading":"Loading...","error":"Something went wrong","success":"Success","profile":"Profile","settings":"Settings","logout":"Logout","loginTitle":"Login","register":"Register","signupTitle":"Create an Account","alreadyHaveAccount":"Already have an account? Login here.","noAccount":"No account? Sign up here.","email":"Email","password":"Password","username":"Username","language":"Language","back":"Back","next":"Next","metaTitle":"LibroFlow | Modern Library Management System Software","metaDescription":"Streamline your library operations with LibroFlow. Manage book cataloging, member circulation, and analytics in one powerful cloud-based platform.","metaKeywords":["Library Management System","LMS Software","Cataloging Tools"],"ogTitle":"LibroFlow - Modern Library Management","ogDescription":"The all-in-one solution for modern libraries.","home":"Home","login":"Login","signup":"Sign Up","books":"Books","heroTitle":"Modern Library Management for the Digital Age","heroSubtitle":"Streamline cataloging, circulation, and member management with an intuitive interface designed for librarians.","heroButtonTrial":"Start Free Trial","heroButtonDemo":"Watch Demo","heroImagePlaceholder":"Dashboard Screenshot","featuresTitle":"Everything You Need to Run Your Library","feature1Title":"Smart Cataloging","feature1Description":"Instantly search, filter, and organize thousands of books with our powerful metadata engine.","feature2Title":"Member Management","feature2Description":"Track memberships, overdue fines, and reading history in one unified dashboard.","feature3Title":"Insightful Analytics","feature3Description":"Visualize borrowing trends and popular genres to make data-driven acquisition decisions.","footerCopyright":"© {year} LibroFlow Library System. All rights reserved.","mapTitle":"Our Location","booksTitle":"Books","unavailable":"Currently unavailable","forgotTitle":"Forgot Password","forgotButton":"Send code","forgotLink":"Forgot password?","resetTitle":"Reset Password","resetButton":"Reset","code":"Verification Code","newPassword":"New Password"});}),
+__turbopack_context__.v({"appName":"Library App","welcome":"Welcome","hello":"Hello","goodbye":"Goodbye","yes":"Yes","no":"No","ok":"OK","cancel":"Cancel","confirm":"Confirm","save":"Save","delete":"Delete","edit":"Edit","update":"Update","submit":"Submit","search":"Search","loading":"Loading...","error":"Something went wrong","success":"Success","profile":"Profile","settings":"Settings","logout":"Logout","loginTitle":"Login","register":"Register","signupTitle":"Create an Account","alreadyHaveAccount":"Already have an account? Login here.","noAccount":"No account? Sign up here.","email":"Email","password":"Password","username":"Username","language":"Language","back":"Back","next":"Next","by":"by","metaTitle":"LibroFlow | Modern Library Management System Software","metaDescription":"Streamline your library operations with LibroFlow. Manage book cataloging, member circulation, and analytics in one powerful cloud-based platform.","metaKeywords":["Library Management System","LMS Software","Cataloging Tools"],"ogTitle":"LibroFlow - Modern Library Management","ogDescription":"The all-in-one solution for modern libraries.","home":"Home","login":"Login","signup":"Sign Up","books":"Books","authors":"Authors","heroTitle":"Modern Library Management for the Digital Age","heroSubtitle":"Streamline cataloging, circulation, and member management with an intuitive interface designed for librarians.","heroButtonTrial":"Start Free Trial","heroButtonDemo":"Watch Demo","heroImagePlaceholder":"Dashboard Screenshot","featuresTitle":"Everything You Need to Run Your Library","feature1Title":"Smart Cataloging","feature1Description":"Instantly search, filter, and organize thousands of books with our powerful metadata engine.","feature2Title":"Member Management","feature2Description":"Track memberships, overdue fines, and reading history in one unified dashboard.","feature3Title":"Insightful Analytics","feature3Description":"Visualize borrowing trends and popular genres to make data-driven acquisition decisions.","footerCopyright":"© {year} LibroFlow Library System. All rights reserved.","mapTitle":"Our Location","booksTitle":"Books","unavailable":"Currently unavailable","forgotTitle":"Forgot Password","forgotButton":"Send code","forgotLink":"Forgot password?","resetTitle":"Reset Password","resetButton":"Reset","code":"Verification Code","newPassword":"New Password","authorsTitle":"Authors","addAuthor":"Add Author","editAuthor":"Edit Author","deleteAuthor":"Delete Author","authorDetails":"Author Details","authorName":"Name","authorBio":"Biography","authorEmail":"Email","authorPhone":"Phone","authorNationality":"Nationality","authorBirthDate":"Birth Date","authorWebsite":"Website","authorCV":"CV / Resume","uploadCV":"Upload CV","downloadCV":"Download CV","generateCV":"Generate CV","cvData":"CV Data","education":"Education","experience":"Experience","publications":"Publications","awards":"Awards","skills":"Skills","institution":"Institution","degree":"Degree","field":"Field of Study","startYear":"Start Year","endYear":"End Year","company":"Company","position":"Position","publisher":"Publisher","organization":"Organization","noAuthors":"No authors available","authorCreated":"Author created successfully","authorUpdated":"Author updated successfully","authorDeleted":"Author deleted successfully","confirmDeleteAuthor":"Are you sure you want to delete this author?","addEducation":"Add Education","addExperience":"Add Experience","addPublication":"Add Publication","addAward":"Add Award","addSkill":"Add Skill","description":"Description","title":"Title","year":"Year","isbn":"ISBN","bookings":"Bookings","history":"History","dashboard":"Dashboard","statistics":"Statistics","quickActions":"Quick Actions","recentActivity":"Recent Activity","totalBooks":"Total Books","totalAuthors":"Total Authors","totalUsers":"Total Users","activeBookings":"Active Bookings","filterByAuthor":"Filter by Author","filterByCategory":"Filter by Category","priceRange":"Price Range","minPrice":"Min Price","maxPrice":"Max Price","applyFilters":"Apply Filters","clearFilters":"Clear Filters","userManagement":"User Management","users":"Users","addUser":"Add User","editUser":"Edit User","deleteUser":"Delete User","userRole":"Role","admin":"Admin","public":"Public","noUsers":"No users available"});}),
 "[project]/dictionaries/fr.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v({"appName":"Application Bibliothèque","welcome":"Bienvenue","hello":"Bonjour","goodbye":"Au revoir","yes":"Oui","no":"Non","ok":"D'accord","cancel":"Annuler","confirm":"Confirmer","save":"Enregistrer","delete":"Supprimer","edit":"Modifier","update":"Mettre à jour","submit":"Soumettre","search":"Rechercher","loading":"Chargement...","error":"Une erreur est survenue","success":"Succès","profile":"Profil","settings":"Paramètres","logout":"Déconnexion","loginTitle":"Connexion","register":"S'inscrire","signupTitle":"Créer un compte","alreadyHaveAccount":"Vous avez déjà un compte ? Connectez-vous ici.","noAccount":"Pas de compte ? Inscrivez-vous ici.","email":"Email","password":"Mot de passe","username":"Nom d'utilisateur","language":"Langue","back":"Retour","next":"Suivant","metaTitle":"LibroFlow | Système de Gestion de Bibliothèque Moderne","metaDescription":"Optimisez les opérations de votre bibliothèque avec LibroFlow. Gérez le catalogage, la circulation des membres et les analyses sur une plateforme cloud puissante.","metaKeywords":["Système de Gestion de Bibliothèque","Logiciel LMS","Outils de Catalogage"],"ogTitle":"LibroFlow - Gestion de Bibliothèque Moderne","ogDescription":"La solution tout-en-un pour les bibliothèques modernes.","home":"Accueil","login":"Connexion","signup":"S'inscrire","books":"Livres","heroTitle":"Gestion de Bibliothèque Moderne pour l'Ère Numérique","heroSubtitle":"Optimisez le catalogage, la circulation et la gestion des membres avec une interface intuitive conçue pour les bibliothécaires.","heroButtonTrial":"Essai Gratuit","heroButtonDemo":"Voir la Démo","heroImagePlaceholder":"Aperçu du Tableau de Bord","featuresTitle":"Tout ce qu'il Faut pour Gérer Votre Bibliothèque","feature1Title":"Catalogage Intelligent","feature1Description":"Recherchez, filtrez et organisez instantanément des milliers de livres avec notre puissant moteur de métadonnées.","feature2Title":"Gestion des Membres","feature2Description":"Suivez les adhésions, les amendes de retard et l'historique de lecture dans un tableau de bord unifié.","feature3Title":"Analyses Perspicaces","feature3Description":"Visualisez les tendances d'emprunt et les genres populaires pour prendre des décisions d'acquisition basées sur les données.","footerCopyright":"© {year} LibroFlow Système de Bibliothèque. Tous droits réservés.","mapTitle":"Notre emplacement","booksTitle":"Livres","unavailable":"Actuellement indisponible","forgotTitle":"Mot de passe oublié","forgotButton":"Envoyer le code","forgotLink":"Mot de passe oublié ?","resetTitle":"Réinitialiser le mot de passe","resetButton":"Réinitialiser","code":"Code de vérification","newPassword":"Nouveau mot de passe"});}),
+__turbopack_context__.v({"appName":"Application Bibliothèque","welcome":"Bienvenue","hello":"Bonjour","goodbye":"Au revoir","yes":"Oui","no":"Non","ok":"D'accord","cancel":"Annuler","confirm":"Confirmer","save":"Enregistrer","delete":"Supprimer","edit":"Modifier","update":"Mettre à jour","submit":"Soumettre","search":"Rechercher","loading":"Chargement...","error":"Une erreur est survenue","success":"Succès","profile":"Profil","settings":"Paramètres","logout":"Déconnexion","loginTitle":"Connexion","register":"S'inscrire","signupTitle":"Créer un compte","alreadyHaveAccount":"Vous avez déjà un compte ? Connectez-vous ici.","noAccount":"Pas de compte ? Inscrivez-vous ici.","email":"Email","password":"Mot de passe","username":"Nom d'utilisateur","language":"Langue","back":"Retour","next":"Suivant","by":"par","metaTitle":"LibroFlow | Système de Gestion de Bibliothèque Moderne","metaDescription":"Optimisez les opérations de votre bibliothèque avec LibroFlow. Gérez le catalogage, la circulation des membres et les analyses sur une plateforme cloud puissante.","metaKeywords":["Système de Gestion de Bibliothèque","Logiciel LMS","Outils de Catalogage"],"ogTitle":"LibroFlow - Gestion de Bibliothèque Moderne","ogDescription":"La solution tout-en-un pour les bibliothèques modernes.","home":"Accueil","login":"Connexion","signup":"S'inscrire","books":"Livres","authors":"Auteurs","heroTitle":"Gestion de Bibliothèque Moderne pour l'Ère Numérique","heroSubtitle":"Optimisez le catalogage, la circulation et la gestion des membres avec une interface intuitive conçue pour les bibliothécaires.","heroButtonTrial":"Essai Gratuit","heroButtonDemo":"Voir la Démo","heroImagePlaceholder":"Aperçu du Tableau de Bord","featuresTitle":"Tout ce qu'il Faut pour Gérer Votre Bibliothèque","feature1Title":"Catalogage Intelligent","feature1Description":"Recherchez, filtrez et organisez instantanément des milliers de livres avec notre puissant moteur de métadonnées.","feature2Title":"Gestion des Membres","feature2Description":"Suivez les adhésions, les amendes de retard et l'historique de lecture dans un tableau de bord unifié.","feature3Title":"Analyses Perspicaces","feature3Description":"Visualisez les tendances d'emprunt et les genres populaires pour prendre des décisions d'acquisition basées sur les données.","footerCopyright":"© {year} LibroFlow Système de Bibliothèque. Tous droits réservés.","mapTitle":"Notre emplacement","booksTitle":"Livres","unavailable":"Actuellement indisponible","forgotTitle":"Mot de passe oublié","forgotButton":"Envoyer le code","forgotLink":"Mot de passe oublié ?","resetTitle":"Réinitialiser le mot de passe","resetButton":"Réinitialiser","code":"Code de vérification","newPassword":"Nouveau mot de passe","authorsTitle":"Auteurs","addAuthor":"Ajouter un Auteur","editAuthor":"Modifier l'Auteur","deleteAuthor":"Supprimer l'Auteur","authorDetails":"Détails de l'Auteur","authorName":"Nom","authorBio":"Biographie","authorEmail":"Email","authorPhone":"Téléphone","authorNationality":"Nationalité","authorBirthDate":"Date de Naissance","authorWebsite":"Site Web","authorCV":"CV / Resume","uploadCV":"Télécharger le CV","downloadCV":"Télécharger le CV","generateCV":"Générer le CV","cvData":"Données CV","education":"Éducation","experience":"Expérience","publications":"Publications","awards":"Prix","skills":"Compétences","institution":"Institution","degree":"Diplôme","field":"Domaine d'Étude","startYear":"Année de Début","endYear":"Année de Fin","company":"Entreprise","position":"Poste","publisher":"Éditeur","organization":"Organisation","noAuthors":"Aucun auteur disponible","authorCreated":"Auteur créé avec succès","authorUpdated":"Auteur mis à jour avec succès","authorDeleted":"Auteur supprimé avec succès","confirmDeleteAuthor":"Êtes-vous sûr de vouloir supprimer cet auteur ?","addEducation":"Ajouter une Éducation","addExperience":"Ajouter une Expérience","addPublication":"Ajouter une Publication","addAward":"Ajouter un Prix","addSkill":"Ajouter une Compétence","description":"Description","title":"Titre","year":"Année","isbn":"ISBN","bookings":"Réservations","history":"Historique","dashboard":"Tableau de Bord","statistics":"Statistiques","quickActions":"Actions Rapides","recentActivity":"Activité Récente","totalBooks":"Total Livres","totalAuthors":"Total Auteurs","totalUsers":"Total Utilisateurs","activeBookings":"Réservations Actives","filterByAuthor":"Filtrer par Auteur","filterByCategory":"Filtrer par Catégorie","priceRange":"Fourchette de Prix","minPrice":"Prix Min","maxPrice":"Prix Max","applyFilters":"Appliquer les Filtres","clearFilters":"Effacer les Filtres","userManagement":"Gestion des Utilisateurs","users":"Utilisateurs","addUser":"Ajouter un Utilisateur","editUser":"Modifier l'Utilisateur","deleteUser":"Supprimer l'Utilisateur","userRole":"Rôle","admin":"Admin","public":"Public","noUsers":"Aucun utilisateur disponible"});}),
 "[project]/dictionaries/ar.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v({"appName":"تطبيق المكتبة","welcome":"مرحباً","hello":"أهلاً","goodbye":"مع السلامة","yes":"نعم","no":"لا","ok":"موافق","cancel":"إلغاء","confirm":"تأكيد","save":"حفظ","delete":"حذف","edit":"تعديل","update":"تحديث","submit":"إرسال","search":"بحث","loading":"جاري التحميل...","error":"حدث خطأ ما","success":"تم بنجاح","profile":"الملف الشخصي","settings":"الإعدادات","logout":"تسجيل الخروج","loginTitle":"تسجيل الدخول","register":"إنشاء حساب","signupTitle":"إنشاء حساب جديد","alreadyHaveAccount":"لديك حساب بالفعل؟ سجل الدخول هنا.","noAccount":"ليس لديك حساب؟ سجل هنا.","email":"البريد الإلكتروني","password":"كلمة المرور","username":"اسم المستخدم","language":"اللغة","back":"رجوع","next":"التالي","metaTitle":"LibroFlow | نظام إدارة المكتبات الحديث","metaDescription":"قم بتبسيط عمليات مكتبتك مع LibroFlow. إدارة فهرسة الكتب، وتداول الأعضاء، والتحليلات في منصة سحابية واحدة قوية.","metaKeywords":["نظام إدارة المكتبات","برنامج LMS","أدوات الفهرسة"],"ogTitle":"LibroFlow - إدارة المكتبات الحديثة","ogDescription":"الحل المتكامل للمكتبات الحديثة.","home":"الرئيسية","login":"تسجيل الدخول","signup":"إنشاء حساب","books":"الكتب","heroTitle":"إدارة المكتبات الحديثة للعصر الرقمي","heroSubtitle":"قم بتبسيط الفهرسة والتداول وإدارة الأعضاء بواجهة بديهية مصممة لأمناء المكتبات.","heroButtonTrial":"ابدأ النسخة التجريبية","heroButtonDemo":"شاهد العرض التوضيحي","heroImagePlaceholder":"لقطة شاشة لوحة التحكم","featuresTitle":"كل ما تحتاجه لإدارة مكتبتك","feature1Title":"فهرسة ذكية","feature1Description":"ابحث، صفي، ونظم آلاف الكتب فوراً باستخدام محرك البيانات الوصفية القوي لدينا.","feature2Title":"إدارة الأعضاء","feature2Description":"تتبع العضويات والغرامات المتأخرة وتاريخ القراءة في لوحة تحكم موحدة.","feature3Title":"تحليلات ثاقبة","feature3Description":"تصور اتجاهات الاستعارة والأنواع الشعبية لاتخاذ قرارات اقتناء مبنية على البيانات.","footerCopyright":"© {year} نظام LibroFlow للمكتبات. جميع الحقوق محفوظة.","mapTitle":"موقعنا","booksTitle":"الكتب","unavailable":"غير متوفر حالياً","forgotTitle":"نسيت كلمة المرور","forgotButton":"إرسال الكود","forgotLink":"هل نسيت كلمة المرور؟","resetTitle":"إعادة تعيين كلمة المرور","resetButton":"إعادة تعيين","code":"رمز التحقق","newPassword":"كلمة مرور جديدة"});}),
+__turbopack_context__.v({"appName":"تطبيق المكتبة","welcome":"مرحباً","hello":"أهلاً","goodbye":"مع السلامة","yes":"نعم","no":"لا","ok":"موافق","cancel":"إلغاء","confirm":"تأكيد","save":"حفظ","delete":"حذف","edit":"تعديل","update":"تحديث","submit":"إرسال","search":"بحث","loading":"جاري التحميل...","error":"حدث خطأ ما","success":"تم بنجاح","profile":"الملف الشخصي","settings":"الإعدادات","logout":"تسجيل الخروج","loginTitle":"تسجيل الدخول","register":"إنشاء حساب","signupTitle":"إنشاء حساب جديد","alreadyHaveAccount":"لديك حساب بالفعل؟ سجل الدخول هنا.","noAccount":"ليس لديك حساب؟ سجل هنا.","email":"البريد الإلكتروني","password":"كلمة المرور","username":"اسم المستخدم","language":"اللغة","back":"رجوع","next":"التالي","by":"بواسطة","metaTitle":"LibroFlow | نظام إدارة المكتبات الحديث","metaDescription":"قم بتبسيط عمليات مكتبتك مع LibroFlow. إدارة فهرسة الكتب، وتداول الأعضاء، والتحليلات في منصة سحابية واحدة قوية.","metaKeywords":["نظام إدارة المكتبات","برنامج LMS","أدوات الفهرسة"],"ogTitle":"LibroFlow - إدارة المكتبات الحديثة","ogDescription":"الحل المتكامل للمكتبات الحديثة.","home":"الرئيسية","login":"تسجيل الدخول","signup":"إنشاء حساب","books":"الكتب","authors":"المؤلفون","heroTitle":"إدارة المكتبات الحديثة للعصر الرقمي","heroSubtitle":"قم بتبسيط الفهرسة والتداول وإدارة الأعضاء بواجهة بديهية مصممة لأمناء المكتبات.","heroButtonTrial":"ابدأ النسخة التجريبية","heroButtonDemo":"شاهد العرض التوضيحي","heroImagePlaceholder":"لقطة شاشة لوحة التحكم","featuresTitle":"كل ما تحتاجه لإدارة مكتبتك","feature1Title":"فهرسة ذكية","feature1Description":"ابحث، صفي، ونظم آلاف الكتب فوراً باستخدام محرك البيانات الوصفية القوي لدينا.","feature2Title":"إدارة الأعضاء","feature2Description":"تتبع العضويات والغرامات المتأخرة وتاريخ القراءة في لوحة تحكم موحدة.","feature3Title":"تحليلات ثاقبة","feature3Description":"تصور اتجاهات الاستعارة والأنواع الشعبية لاتخاذ قرارات اقتناء مبنية على البيانات.","footerCopyright":"© {year} نظام LibroFlow للمكتبات. جميع الحقوق محفوظة.","mapTitle":"موقعنا","booksTitle":"الكتب","unavailable":"غير متوفر حالياً","forgotTitle":"نسيت كلمة المرور","forgotButton":"إرسال الكود","forgotLink":"هل نسيت كلمة المرور؟","resetTitle":"إعادة تعيين كلمة المرور","resetButton":"إعادة تعيين","code":"رمز التحقق","newPassword":"كلمة مرور جديدة","authorsTitle":"المؤلفون","addAuthor":"إضافة مؤلف","editAuthor":"تعديل المؤلف","deleteAuthor":"حذف المؤلف","authorDetails":"تفاصيل المؤلف","authorName":"الاسم","authorBio":"السيرة الذاتية","authorEmail":"البريد الإلكتروني","authorPhone":"الهاتف","authorNationality":"الجنسية","authorBirthDate":"تاريخ الميلاد","authorWebsite":"الموقع الإلكتروني","authorCV":"السيرة الذاتية","uploadCV":"رفع السيرة الذاتية","downloadCV":"تحميل السيرة الذاتية","generateCV":"إنشاء السيرة الذاتية","cvData":"بيانات السيرة الذاتية","education":"التعليم","experience":"الخبرة","publications":"المؤلفات","awards":"الجوائز","skills":"المهارات","institution":"المؤسسة","degree":"الدرجة العلمية","field":"مجال الدراسة","startYear":"سنة البداية","endYear":"سنة النهاية","company":"الشركة","position":"المنصب","publisher":"الناشر","organization":"المنظمة","noAuthors":"لا يوجد مؤلفون","authorCreated":"تم إنشاء المؤلف بنجاح","authorUpdated":"تم تحديث المؤلف بنجاح","authorDeleted":"تم حذف المؤلف بنجاح","confirmDeleteAuthor":"هل أنت متأكد من حذف هذا المؤلف؟","addEducation":"إضافة تعليم","addExperience":"إضافة خبرة","addPublication":"إضافة مؤلف","addAward":"إضافة جائزة","addSkill":"إضافة مهارة","description":"الوصف","title":"العنوان","year":"السنة","isbn":"ISBN","bookings":"الحجوزات","history":"السجل","dashboard":"لوحة التحكم","statistics":"الإحصائيات","quickActions":"إجراءات سريعة","recentActivity":"النشاط الأخير","totalBooks":"إجمالي الكتب","totalAuthors":"إجمالي المؤلفين","totalUsers":"إجمالي المستخدمين","activeBookings":"الحجوزات النشطة","filterByAuthor":"تصفية حسب المؤلف","filterByCategory":"تصفية حسب الفئة","priceRange":"نطاق السعر","minPrice":"الحد الأدنى للسعر","maxPrice":"الحد الأقصى للسعر","applyFilters":"تطبيق الفلاتر","clearFilters":"مسح الفلاتر","userManagement":"إدارة المستخدمين","users":"المستخدمون","addUser":"إضافة مستخدم","editUser":"تعديل المستخدم","deleteUser":"حذف المستخدم","userRole":"الدور","admin":"مدير","public":"عام","noUsers":"لا يوجد مستخدمون"});}),
 "[project]/app/components/Navbar/Navbar.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -177,6 +177,10 @@ function Navbar() {
             label: t.books,
             href: `/${lang}/books`
         },
+        {
+            label: t.authors || 'Authors',
+            href: `/${lang}/authors`
+        },
         ...isAuthenticated ? [] : [
             {
                 label: t.login,
@@ -198,7 +202,17 @@ function Navbar() {
                     children: t.books
                 }, void 0, false, {
                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                    lineNumber: 121,
+                    lineNumber: 122,
+                    columnNumber: 7
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
+                    component: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"],
+                    href: `/${lang}/authors`,
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Navbar$2f$Navbar$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].navLink,
+                    children: t.authors || 'Authors'
+                }, void 0, false, {
+                    fileName: "[project]/app/components/Navbar/Navbar.tsx",
+                    lineNumber: 130,
                     columnNumber: 7
                 }, this),
                 userRole === 'admin' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -208,7 +222,7 @@ function Navbar() {
                     children: "Admin"
                 }, void 0, false, {
                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                    lineNumber: 130,
+                    lineNumber: 139,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$IconButton$2f$IconButton$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__IconButton$3e$__["IconButton"], {
@@ -216,12 +230,12 @@ function Navbar() {
                     onClick: handleLanguageMenuOpen,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$icons$2d$material$2f$esm$2f$Translate$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                        lineNumber: 143,
+                        lineNumber: 152,
                         columnNumber: 9
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                    lineNumber: 139,
+                    lineNumber: 148,
                     columnNumber: 7
                 }, this),
                 isAuthenticated ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -230,13 +244,13 @@ function Navbar() {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Navbar$2f$Navbar$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].navButton,
                     startIcon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$icons$2d$material$2f$esm$2f$Logout$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                        lineNumber: 151,
+                        lineNumber: 160,
                         columnNumber: 22
                     }, void 0),
                     children: t.logout || 'Logout'
                 }, void 0, false, {
                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                    lineNumber: 147,
+                    lineNumber: 156,
                     columnNumber: 9
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
                     component: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"],
@@ -246,13 +260,13 @@ function Navbar() {
                     children: pathname.includes('/login') ? t.signup : t.login
                 }, void 0, false, {
                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                    lineNumber: 156,
+                    lineNumber: 165,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/Navbar/Navbar.tsx",
-            lineNumber: 120,
+            lineNumber: 121,
             columnNumber: 5
         }, this);
     const renderDrawerContent = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Box$2f$Box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -265,7 +279,7 @@ function Navbar() {
                     children: t.appName
                 }, void 0, false, {
                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                    lineNumber: 170,
+                    lineNumber: 179,
                     columnNumber: 7
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$List$2f$List$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__List$3e$__["List"], {
@@ -279,12 +293,12 @@ function Navbar() {
                                     primary: item.label
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                    lineNumber: 181,
+                                    lineNumber: 190,
                                     columnNumber: 13
                                 }, this)
                             }, item.label, false, {
                                 fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                lineNumber: 175,
+                                lineNumber: 184,
                                 columnNumber: 11
                             }, this)),
                         userRole === 'admin' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$ListItem$2f$ListItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ListItem$3e$__["ListItem"], {
@@ -295,12 +309,12 @@ function Navbar() {
                                 primary: "Admin"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                lineNumber: 191,
+                                lineNumber: 200,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                            lineNumber: 186,
+                            lineNumber: 195,
                             columnNumber: 11
                         }, this),
                         isAuthenticated && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -311,7 +325,7 @@ function Navbar() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                    lineNumber: 197,
+                                    lineNumber: 206,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$ListItem$2f$ListItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ListItem$3e$__["ListItem"], {
@@ -327,12 +341,12 @@ function Navbar() {
                                         primary: t.logout || 'Logout'
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                        lineNumber: 206,
+                                        lineNumber: 215,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                    lineNumber: 198,
+                                    lineNumber: 207,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -343,7 +357,7 @@ function Navbar() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                            lineNumber: 211,
+                            lineNumber: 220,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Typography$2f$Typography$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -356,7 +370,7 @@ function Navbar() {
                             children: t.language
                         }, void 0, false, {
                             fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                            lineNumber: 213,
+                            lineNumber: 222,
                             columnNumber: 9
                         }, this),
                         languages.map((lang)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$ListItem$2f$ListItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ListItem$3e$__["ListItem"], {
@@ -369,24 +383,24 @@ function Navbar() {
                                     primary: lang.name
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                    lineNumber: 225,
+                                    lineNumber: 234,
                                     columnNumber: 13
                                 }, this)
                             }, lang.code, false, {
                                 fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                lineNumber: 217,
+                                lineNumber: 226,
                                 columnNumber: 11
                             }, this))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                    lineNumber: 173,
+                    lineNumber: 182,
                     columnNumber: 7
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/Navbar/Navbar.tsx",
-            lineNumber: 169,
+            lineNumber: 178,
             columnNumber: 5
         }, this);
     const locale = lang;
@@ -409,7 +423,7 @@ function Navbar() {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Navbar$2f$Navbar$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].logoIcon
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                    lineNumber: 240,
+                                    lineNumber: 249,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Typography$2f$Typography$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -417,13 +431,13 @@ function Navbar() {
                                     children: t.appName
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                    lineNumber: 241,
+                                    lineNumber: 250,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                            lineNumber: 239,
+                            lineNumber: 248,
                             columnNumber: 11
                         }, this),
                         renderDesktopNav(),
@@ -435,23 +449,23 @@ function Navbar() {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Navbar$2f$Navbar$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].mobileMenuButton,
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$icons$2d$material$2f$esm$2f$Menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                                lineNumber: 255,
+                                lineNumber: 264,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                            lineNumber: 248,
+                            lineNumber: 257,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                    lineNumber: 237,
+                    lineNumber: 246,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                lineNumber: 236,
+                lineNumber: 245,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Menu$2f$Menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
@@ -464,12 +478,12 @@ function Navbar() {
                         children: lang.name
                     }, lang.code, false, {
                         fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                        lineNumber: 266,
+                        lineNumber: 275,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                lineNumber: 260,
+                lineNumber: 269,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Drawer$2f$Drawer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Drawer$3e$__["Drawer"], {
@@ -482,7 +496,7 @@ function Navbar() {
                 children: renderDrawerContent()
             }, void 0, false, {
                 fileName: "[project]/app/components/Navbar/Navbar.tsx",
-                lineNumber: 276,
+                lineNumber: 285,
                 columnNumber: 7
             }, this)
         ]

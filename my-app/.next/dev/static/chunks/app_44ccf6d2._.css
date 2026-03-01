@@ -15,23 +15,19 @@
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .shrink {
   flex-shrink: 1;
 }
 
-html {
-  background-color: #f8f9fa !important;
-}
-
-body {
-  color: #333;
+html, body {
   margin: 0;
   padding: 0;
+  color: #333 !important;
   background-color: #f8f9fa !important;
-}
-
-* {
-  background-color: inherit;
 }
 
 input:focus {

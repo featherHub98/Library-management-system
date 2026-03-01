@@ -90,3 +90,115 @@ export const validateBooking = [
     next();
   }
 ];
+
+// Author validation middlewares
+export const validateAuthorCreation = [
+  body('name')
+    .notEmpty().withMessage('Author name is required')
+    .isLength({ max: 200 }).withMessage('Name cannot exceed 200 characters')
+    .trim(),
+  body('bio')
+    .optional()
+    .isLength({ max: 5000 }).withMessage('Bio cannot exceed 5000 characters')
+    .trim(),
+  body('email')
+    .optional()
+    .isEmail().withMessage('Invalid email format')
+    .normalizeEmail(),
+  body('phone')
+    .optional()
+    .isLength({ max: 20 }).withMessage('Phone cannot exceed 20 characters')
+    .trim(),
+  body('nationality')
+    .optional()
+    .isLength({ max: 100 }).withMessage('Nationality cannot exceed 100 characters')
+    .trim(),
+  body('birthDate')
+    .optional()
+    .isISO8601().withMessage('Invalid birth date format')
+    .toDate(),
+  body('website')
+    .optional()
+    .isURL().withMessage('Invalid website URL')
+    .isLength({ max: 500 }).withMessage('Website URL cannot exceed 500 characters')
+    .trim(),
+  body('cvData')
+    .optional()
+    .isObject().withMessage('CV data must be an object'),
+
+  (req: Request, res: Response, next: NextFunction) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        success: false,
+        errors: errors.array()
+      });
+    }
+    next();
+  }
+];
+
+export const validateAuthorUpdate = [
+  body('name')
+    .optional()
+    .notEmpty().withMessage('Author name cannot be empty')
+    .isLength({ max: 200 }).withMessage('Name cannot exceed 200 characters')
+    .trim(),
+  body('bio')
+    .optional()
+    .isLength({ max: 5000 }).withMessage('Bio cannot exceed 5000 characters')
+    .trim(),
+  body('email')
+    .optional()
+    .isEmail().withMessage('Invalid email format')
+    .normalizeEmail(),
+  body('phone')
+    .optional()
+    .isLength({ max: 20 }).withMessage('Phone cannot exceed 20 characters')
+    .trim(),
+  body('nationality')
+    .optional()
+    .isLength({ max: 100 }).withMessage('Nationality cannot exceed 100 characters')
+    .trim(),
+  body('birthDate')
+    .optional()
+    .isISO8601().withMessage('Invalid birth date format')
+    .toDate(),
+  body('website')
+    .optional()
+    .isURL().withMessage('Invalid website URL')
+    .isLength({ max: 500 }).withMessage('Website URL cannot exceed 500 characters')
+    .trim(),
+  body('cvData')
+    .optional()
+    .isObject().withMessage('CV data must be an object'),
+
+  (req: Request, res: Response, next: NextFunction) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        success: false,
+        errors: errors.array()
+      });
+    }
+    next();
+  }
+];
+
+export const validateAuthorQuery = [
+  query('search').optional().isString().trim(),
+  query('nationality').optional().isString().trim(),
+  query('page').optional().isInt({ min: 1 }).toInt(),
+  query('limit').optional().isInt({ min: 1, max: 100 }).toInt(),
+
+  (req: Request, res: Response, next: NextFunction) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        success: false,
+        errors: errors.array()
+      });
+    }
+    next();
+  }
+];

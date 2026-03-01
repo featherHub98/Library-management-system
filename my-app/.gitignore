@@ -1,3 +1,4 @@
 node_modules/
 dist/
-ARCHITECTURE_DOCUMENTATION.md
+ARCHITECTURE_DOCUMENTATION.md/
+.next

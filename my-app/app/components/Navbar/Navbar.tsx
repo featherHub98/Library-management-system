@@ -110,6 +110,7 @@ export default function Navbar() {
   const navItems = [
     { label: t.home, href: `/${lang}` },
     { label: t.books, href: `/${lang}/books` },
+    { label: t.authors || 'Authors', href: `/${lang}/authors` },
     ...(isAuthenticated ? [] : [
       { label: t.login, href: `/${lang}/login` },
       { label: t.signup, href: `/${lang}/signup` },
@@ -124,6 +125,14 @@ export default function Navbar() {
         className={styles.navLink}
       >
         {t.books}
+      </Button>
+
+      <Button
+        component={Link}
+        href={`/${lang}/authors`}
+        className={styles.navLink}
+      >
+        {t.authors || 'Authors'}
       </Button>
 
       {userRole === 'admin' && (
