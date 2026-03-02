@@ -4,11 +4,17 @@ import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import {
-  Box, Container, Typography, Button, Grid, Card, CardContent,
+  Box, Container, Typography, Button, Grid, Card, CardContent, Select, MenuItem, FormControl,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import GroupIcon from '@mui/icons-material/Group';
+import BookIcon from '@mui/icons-material/Book';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import styles from './LandingPage.module.css';
 import en from '@/dictionaries/en.json'
 import fr from '@/dictionaries/fr.json'
@@ -49,7 +55,8 @@ export default function LandingPage() {
     locations.find((location) => location.city === 'Sousse') || locations[0]
   );
 
-  const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${selectedLocation.lng - 1.2}%2C${selectedLocation.lat - 0.8}%2C${selectedLocation.lng + 1.2}%2C${selectedLocation.lat + 0.8}&layer=mapnik&marker=${selectedLocation.lat}%2C${selectedLocation.lng}`;
+  // Better zoom: smaller bbox for more zoomed in view
+  const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${selectedLocation.lng - 0.07}%2C${selectedLocation.lat - 0.07}%2C${selectedLocation.lng + 0.07}%2C${selectedLocation.lat + 0.07}&layer=mapnik&marker=${selectedLocation.lat}%2C${selectedLocation.lng}`;
 
   const features = [
     {
@@ -66,6 +73,36 @@ export default function LandingPage() {
       icon: <AnalyticsIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
       title: t.feature3Title,
       description: t.feature3Description
+    },
+    {
+      icon: <BookIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
+      title: 'Borrowing & Reservations',
+      description: 'Seamlessly manage book loans, reservations, and returns with automated tracking and reminders.'
+    },
+    {
+      icon: <NotificationsIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
+      title: 'Smart Notifications',
+      description: 'Keep members informed with timely alerts for due dates, available books, and new recommendations.'
+    },
+    {
+      icon: <FolderSpecialIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
+      title: 'Author Management',
+      description: 'Organize and maintain comprehensive author profiles with CV, publications, and achievements.'
+    },
+    {
+      icon: <FavoriteBorderIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
+      title: 'Wishlists & Reading Lists',
+      description: 'Let members curate personalized collections and share their favorite books with the community.'
+    },
+    {
+      icon: <TrendingUpIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
+      title: 'Recommendations',
+      description: 'AI-powered suggestions based on borrowing history and reading preferences to keep members engaged.'
+    },
+    {
+      icon: <AdminPanelSettingsIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
+      title: 'Admin Dashboard',
+      description: 'Complete control with role-based access, user management, and comprehensive reporting tools.'
     }
   ];
 
@@ -96,19 +133,63 @@ export default function LandingPage() {
                   variant="contained" 
                   size="large" 
                   color="primary"
+                  sx={{
+                    background: 'linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)',
+                    '&:hover': {
+                      background: 'linear-gradient(135deg, #00b8d4 0%, #0077aa 100%)',
+                      transform: 'translateY(-2px)',
+                    },
+                  }}
                 >
                   {t.heroButtonTrial}
                 </Button>
-                <Button variant="outlined" size="large">
-                  {t.heroButtonDemo}
+                <Button 
+                  component={Link}
+                  href={`/${lang}/books`}
+                  variant="outlined" 
+                  size="large"
+                  sx={{
+                    borderColor: 'rgba(255,255,255,0.8)',
+                    color: 'white',
+                    '&:hover': {
+                      borderColor: 'white',
+                      backgroundColor: 'rgba(255,255,255,0.1)',
+                      transform: 'translateY(-2px)',
+                    },
+                  }}
+                >
+                  Browse Books
                 </Button>
               </Box>
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
               <Box className={styles.heroImagePlaceholder}>
-                <Typography color="text.secondary">
-                  {t.heroImagePlaceholder}
-                </Typography>
+                <Grid container spacing={2}>
+                  <Grid size={{ xs: 6 }}>
+                    <Card sx={{ textAlign: 'center', p: 2, background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                      <Typography variant="h4" sx={{ color: '#00d4ff', fontWeight: 'bold', mb: 1 }}>5000+</Typography>
+                      <Typography sx={{ color: 'rgba(255,255,255,0.8)' }}>Books Available</Typography>
+                    </Card>
+                  </Grid>
+                  <Grid size={{ xs: 6 }}>
+                    <Card sx={{ textAlign: 'center', p: 2, background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                      <Typography variant="h4" sx={{ color: '#00d4ff', fontWeight: 'bold', mb: 1 }}>10k+</Typography>
+                      <Typography sx={{ color: 'rgba(255,255,255,0.8)' }}>Active Members</Typography>
+                    </Card>
+                  </Grid>
+                  <Grid size={{ xs: 6 }}>
+                    <Card sx={{ textAlign: 'center', p: 2, background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                      <Typography variant="h4" sx={{ color: '#00d4ff', fontWeight: 'bold', mb: 1 }}>14</Typography>
+                      <Typography sx={{ color: 'rgba(255,255,255,0.8)' }}>Locations</Typography>
+                    </Card>
+                  </Grid>
+                  <Grid size={{ xs: 6 }}>
+                    <Card sx={{ textAlign: 'center', p: 2, background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                      <Typography variant="h4" sx={{ color: '#00d4ff', fontWeight: 'bold', mb: 1 }}>24/7</Typography>
+                      <Typography sx={{ color: 'rgba(255,255,255,0.8)' }}>Online Access</Typography>
+                    </Card>
+                  </Grid>
+                </Grid>
               </Box>
             </Grid>
           </Grid>
@@ -116,30 +197,61 @@ export default function LandingPage() {
 
       <Box className={styles.mapSection}>
         <Container maxWidth="lg">
-          <Typography variant="h4" component="h2" gutterBottom>
-            {t.mapTitle || 'Our Location'}
-          </Typography>
-          <Box className={styles.locationMarkers}>
-            {locations.map((location) => {
-              const isActive = location.city === selectedLocation.city;
-              return (
-                <Button
-                  key={`${location.country}-${location.city}`}
-                  variant={isActive ? 'contained' : 'outlined'}
-                  size="small"
-                  onClick={() => setSelectedLocation(location)}
-                >
-                  📍 {location.city}
-                </Button>
-              );
-            })}
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+            <Typography variant="h4" component="h2">
+              {t.mapTitle || 'Our Locations'}
+            </Typography>
+            <FormControl sx={{ minWidth: 250 }}>
+              <Select
+                value={selectedLocation.city}
+                onChange={(e) => {
+                  const location = locations.find(loc => loc.city === e.target.value);
+                  if (location) setSelectedLocation(location);
+                }}
+                sx={{
+                  backgroundColor: 'background.paper',
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'primary.main',
+                    },
+                  },
+                }}
+              >
+                {locations.map((location) => (
+                  <MenuItem 
+                    key={`${location.country}-${location.city}`} 
+                    value={location.city}
+                  >
+                    📍 {location.city}, {location.country}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
           </Box>
-          <iframe
-            title="library-locations-map"
-            className={styles.mapIframe}
-            src={mapSrc}
-            loading="lazy"
-          />
+          <Box sx={{ position: 'relative' }}>
+            <iframe
+              title="library-locations-map"
+              className={styles.mapIframe}
+              src={mapSrc}
+              loading="lazy"
+            />
+            <Box className={styles.locationPopup}>
+              <Typography 
+                variant="subtitle1" 
+                sx={{ fontWeight: 'bold', mb: 0.5 }}
+              >
+                📍 {selectedLocation.city}
+              </Typography>
+              <Typography variant="body2" sx={{ color: '#666', mb: 0.25 }}>
+                {selectedLocation.country}
+              </Typography>
+              {selectedLocation.area && (
+                <Typography variant="caption" sx={{ color: '#666' }}>
+                  {selectedLocation.area}
+                </Typography>
+              )}
+            </Box>
+          </Box>
         </Container>
       </Box>
       </Box>
@@ -154,7 +266,7 @@ export default function LandingPage() {
         </Typography>
         <Grid container spacing={4}>
           {features.map((feature, index) => (
-            <Grid size={{ xs: 12, md: 4 }} key={index}>
+            <Grid size={{ xs: 12, md: 6, lg: 4 }} key={index}>
               <Card className={styles.featureCard}>
                 <CardContent>
                   <Box className={styles.featureIconWrapper}>

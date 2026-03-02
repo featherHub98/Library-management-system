@@ -1,6 +1,5 @@
 services:
   consul:
-    # Pinning a specific version avoids the "manifest unknown" error
     image: consul:1.15.4
     network_mode: "host"
      

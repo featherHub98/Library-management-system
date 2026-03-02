@@ -4,6 +4,7 @@ import consul from 'consul';
 import axios from 'axios';
 
 import authRoutes from './routes/authRoutes';
+import userProfileRoutes from './routes/userProfile.routes';
 import cors from 'cors';
 import { errorHandler } from './middleware/error.middleware';
 
@@ -68,6 +69,7 @@ async function bootstrap() {
   }
 
   app.use('/', authRoutes);
+  app.use('/user', userProfileRoutes);
 
   app.use(errorHandler);
 

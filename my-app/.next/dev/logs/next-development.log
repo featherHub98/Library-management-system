@@ -1,18 +1,2034 @@
-[00:02:43.863] Server  LOG     ○ Compiling proxy ...
-[00:03:18.305] Server  LOG     ✓ Ready in 143.2s
-[00:05:43.403] Server  LOG     ○ Compiling /[lang] ...
-[00:06:41.822] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:41.271] Server  LOG     ○ Compiling /[lang]/books ...
-[00:09:07.364] Server  LOG     ○ Compiling /[lang]/authors ...
-[00:09:53.921] Browser WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
+[00:02:19.961] Server  LOG     ○ Compiling proxy ...
+[00:02:32.982] Server  LOG     ✓ Ready in 107.1s
+[00:27:40.821] Server  LOG     ○ Compiling /[lang] ...
+[00:28:26.490] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:30.113] Server  LOG     ○ Compiling /api/auth/me ...
+[00:31:04.803] Server  LOG     ○ Compiling /[lang]/authors ...
+[00:31:21.036] Server  LOG     ○ Compiling /[lang]/login ...
+[00:31:41.618] Browser LOG     Login successful: {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTFmMzdjZmY3MGJmZWZmNjJiYmM4YyIsInVzZXJuYW1lIjoiYWRtaW4yIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzcyNDY4MTA4LCJleHAiOjE3NzI0NzE3MDh9.2kVHoNVccmuY37qXjaDqjTf9M4BFA72-C-cVyBl1DXs","user":{"email":"admin@library.com","id":"69a1f37cff70bfeff62bbc8c","role":"admin","username":"admin2"}}
+[00:51:15.273] Server  LOG     ✓ Compiled in 30.8s
+[00:51:16.611] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:237:1
+Parsing ecmascript source code failed
+  235 |     </Box>
+  236 |   );
+> 237 | }
+      | ^
 
-[00:09:53.921] Browser WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
 
-[00:09:53.921] Browser WARN    MUI Grid: The `sm` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+[00:51:19.753] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:237:1
+Parsing ecmascript source code failed
+  235 |     </Box>
+  236 |   );
+> 237 | }
+      | ^
 
-[00:10:46.478] Server  ERROR   Error creating author: TypeError: Content-Type was not one of "multipart/form-data" or "application/x-www-form-urlencoded".
-[00:10:54.693] Server  LOG     ○ Compiling /[lang]/login ...
-[00:13:26.678] Browser ERROR   Login error: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"data":"{\"username\":\"admin1\",\"password\":\"admin123\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"legacyInterceptorReqResOrdering":true,"silentJSONParsing":true},"url":"/api/auth/login","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10379:16)\n    at XMLHttpRequest.onloadend (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:10897:174)\n    at Axios.request (http://localhost:3000/_next/static/chunks/node_modules_558bd180._.js:11703:49)\n    at async handleSubmit (http://localhost:3000/_next/static/chunks/app_%5Blang%5D_login_2911d907._.js:91:28)","status":401}
-[00:17:12.114] Browser LOG     Login successful: {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTFmMzdjZmY3MGJmZWZmNjJiYmM4YyIsInVzZXJuYW1lIjoiYWRtaW4yIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzcyMzk3Mzg4LCJleHAiOjE3NzI0MDA5ODh9.2y7ez-4XbStSRXwEM0Npatma6ZwB_OlTuPIE-PKVMRc","user":{"email":"admin@library.com","id":"69a1f37cff70bfeff62bbc8c","role":"admin","username":"admin2"}}
-[00:19:37.817] Server  LOG     ○ Compiling /[lang]/admin/books ...
-[00:19:45.303] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+[00:52:36.685] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:237:1
+Parsing ecmascript source code failed
+  235 |     </Box>
+  236 |   );
+> 237 | }
+      | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+[00:52:36.685] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:237:1
+Parsing ecmascript source code failed
+  235 |     </Box>
+  236 |   );
+> 237 | }
+      | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+[00:52:36.685] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:237:1
+Parsing ecmascript source code failed
+  235 |     </Box>
+  236 |   );
+> 237 | }
+      | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+[00:53:32.529] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:237:1
+Parsing ecmascript source code failed
+  235 |     </Box>
+  236 |   )
+> 237 | }
+      | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+[00:53:43.632] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:237:1
+Parsing ecmascript source code failed
+  235 |     </Box>
+  236 |   );
+> 237 | }
+      | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+[00:56:56.675] Server  LOG     ✓ Compiled in 21.7s
+[00:57:01.372] Server  LOG     ○ Compiling /[lang] ...
+[00:57:03.685] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.024] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.764] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.768] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.774] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.810] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.813] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.848] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.853] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.854] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.880] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.896] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.905] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.927] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.932] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.934] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:04.974] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:06.255] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:06.745] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:06.763] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:06.885] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:06.929] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:07.294] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:07.611] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:07.626] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:09.459] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:09.496] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:11.262] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:11.364] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:11.368] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:11.945] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:11.980] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:12.060] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:13.489] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:13.526] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:13.538] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.195] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.245] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.344] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.435] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.502] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.571] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.670] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.756] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.798] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.830] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.836] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.837] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:14.873] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:15.153] Server  LOG     ○ Compiling /_error ...
+[00:57:20.300] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.332] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.565] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.624] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.701] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.723] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.752] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.770] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.821] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.851] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.940] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.975] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:20.986] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.007] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.017] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.019] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.024] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.035] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.036] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.042] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.051] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.052] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx
+Module not found: Can't resolve './MapComponent'
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.056] Server  ERROR   ⨯ ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:21.067] Server  LOG     ✓ Compiled in 13.7s
+[00:57:22.615] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:22.615] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:35.372] Browser ERROR   uncaughtError: Error: ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:35.841] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:37.613] Browser ERROR   ./app/components/LandingPage/LandinPage.tsx:25:34
+Module not found: Can't resolve './MapComponent'
+  23 |
+  24 | // Dynamically import the map component with no SSR
+> 25 | const LeafletMap = dynamic(() => import('./MapComponent'), { ssr: false });
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | const dictionaries = { en, fr, ar };
+  28 |
+
+Import trace:
+  Server Component:
+    ./app/components/LandingPage/LandinPage.tsx
+    ./app/[lang]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:43.881] Server  LOG     ✓ Compiled in 2.2s
+[00:57:47.230] Server  LOG     ○ Compiling /[lang] ...
+[00:57:47.476] Server  ERROR   ⨯ ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:47.482] Server  ERROR   ⨯ ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:47.496] Server  ERROR   ⨯ ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:47.561] Server  ERROR   ⨯ ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:48.011] Browser ERROR   uncaughtError: Error: ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:57:48.625] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:48.625] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:48.625] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:48.625] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:48.625] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:48.625] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:51.609] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:57:51.609] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:00.028] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:00.028] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:00.028] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:00.028] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:00.614] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:00.614] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:01.615] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:01.615] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:46.618] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:46.618] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import trace:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:53.202] Server  ERROR   ⨯ ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:58:53.214] Server  ERROR   ⨯ ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:58:53.216] Server  ERROR   ⨯ ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:58:53.224] Server  ERROR   ⨯ ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:58:53.227] Server  ERROR   ⨯ ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:58:53.233] Server  ERROR   ⨯ ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:58:53.614] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import traces:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:58:53.614] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import traces:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:59:00.569] Server  LOG     ✓ Finished filesystem cache database compaction in 88s
+[00:59:00.673] Server  LOG     ✓ Finished writing to filesystem cache in 82s
+[00:59:09.319] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useRef, useState } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | type LocationPoint = {
+
+Import traces:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:59:09.319] Browser ERROR   ./app/components/LandingPage/MapComponent.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useRef, useState } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type LocationPoint = {
+  8 |   country: string;
+
+Import traces:
+  Client Component Browser:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component Browser]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/LandingPage/MapComponent.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Client Component SSR]
+    ./app/components/LandingPage/LandinPage.tsx [Server Component]
+    ./app/[lang]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:59:15.359] Server  LOG     ✓ Compiled in 749ms
+[00:59:25.061] Server  ERROR   ⨯ ReferenceError: LeafletMap is not defined
+[00:59:27.685] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:30.628] Browser ERROR   uncaughtError: ReferenceError: LeafletMap is not defined
+[00:59:47.031] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:59:48.870] Server  LOG     ✓ Compiled in 7.2s
+[00:59:48.977] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:59:52.009] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:02:55.370] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:22.652] Browser WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
+
+[01:05:22.652] Browser WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
+
+[01:05:22.652] Browser WARN    MUI Grid: The `sm` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
+
+[01:05:48.313] Server  LOG     ○ Compiling /_not-found/page ...
+[01:09:00.426] Server  LOG     ✓ Compiled in 13.3s
+[01:12:21.160] Server  WARN    ⚠ "Failed to reload dynamic routes:" Error: UNKNOWN: unknown error, open 'C:\projects\hamma pfe\Library-management-system\my-app\.next\dev\types\routes.d.ts'
+[01:14:09.890] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

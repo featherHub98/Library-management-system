@@ -30,39 +30,33 @@ export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userRole, setUserRole] = useState<'admin' | 'public' | null>(null);
-
-  const decodeRoleFromToken = (token: string | null): 'admin' | 'public' | null => {
-    if (!token) return null;
-    
-    const parts = token.split('.');
-    if (parts.length < 2) return null;
-    
-    try {
-      const payloadBase64 = parts[1]
-        .replace(/-/g, '+')
-        .replace(/_/g, '/');
-      const padded = payloadBase64 + '='.repeat((4 - (payloadBase64.length % 4)) % 4);
-      const payload = JSON.parse(atob(padded)) as { role?: string };
-      return (payload.role === 'admin' || payload.role === 'public') ? (payload.role as 'admin' | 'public') : null;
-    } catch {
-      return null;
-    }
-  };
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const token = localStorage.getItem('authToken');
-        const role = decodeRoleFromToken(token);
-        setIsAuthenticated(!!token);
-        setUserRole(role);
+        setIsLoading(true);
+        const response = await fetch('/api/auth/me');
+        const data = (await response.json()) as { isAuthenticated: boolean; role?: 'admin' | 'public' };
+        
+        setIsAuthenticated(data.isAuthenticated);
+        setUserRole(data.role || null);
       } catch (error) {
         console.error('Auth check error:', error);
         setIsAuthenticated(false);
         setUserRole(null);
+      } finally {
+        setIsLoading(false);
       }
     };
     checkAuth();
+
+    // Add a listener for storage events (login/logout in other tabs)
+    const handleStorageChange = () => {
+      checkAuth();
+    };
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
   const handleDrawerToggle = () => {
@@ -82,8 +76,8 @@ export default function Navbar() {
       const response = await fetch('/api/auth/logout', { method: 'POST' });
       
       if (response.ok) {
-        localStorage.removeItem('authToken');
         setIsAuthenticated(false);
+        setUserRole(null);
         setMobileOpen(false);
         router.push(`/${lang}/login`);
       } else {

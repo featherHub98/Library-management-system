@@ -11,6 +11,17 @@ export interface IBook extends Document {
   price: number;              // computed/sell price
   stock: number;
   status: BookStockStatus;
+  isbn?: string;
+  barcode?: string;
+  categories?: string[];
+  language?: string;
+  edition?: number;
+  volume?: number;
+  series?: string;
+  description?: string;
+  publishedDate?: Date;
+  publisher?: string;
+  pages?: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -24,6 +35,17 @@ export interface IBookResponse {
   price: number;
   stock: number;
   status: BookStockStatus;
+  isbn?: string;
+  barcode?: string;
+  categories?: string[];
+  language?: string;
+  edition?: number;
+  volume?: number;
+  series?: string;
+  description?: string;
+  publishedDate?: Date;
+  publisher?: string;
+  pages?: number;
   createdAt: Date;
   updatedAt: Date;
 }

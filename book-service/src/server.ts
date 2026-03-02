@@ -4,6 +4,15 @@ import consul from 'consul';
 import { connectDB, connectPostgres } from './config/database';
 import bookRoutes from './routes/book.routes';
 import authorRoutes from './routes/author.routes';
+import reviewRoutes from './routes/review.routes';
+import wishlistRoutes from './routes/wishlist.routes';
+import bulkOperationRoutes from './routes/bulkOperation.routes';
+import borrowingRoutes from './routes/borrowing.routes';
+import reservationRoutes from './routes/reservation.routes';
+import recommendationRoutes from './routes/recommendation.routes';
+import notificationRoutes from './routes/notification.routes';
+import searchRoutes from './routes/search.routes';
+import analyticsRoutes from './routes/analytics.routes';
 import { errorHandler } from './middleware/error.middleware';
 import BookImage from './models/postgres/BookImage';
 
@@ -45,6 +54,15 @@ class Server {
  
     this.app.use('/books', bookRoutes);
     this.app.use('/authors', authorRoutes);
+    this.app.use('/reviews', reviewRoutes);
+    this.app.use('/user', wishlistRoutes);
+    this.app.use('/admin/bulk', bulkOperationRoutes);
+    this.app.use('/borrowing', borrowingRoutes);
+    this.app.use('/reservations', reservationRoutes);
+    this.app.use('/recommendations', recommendationRoutes);
+    this.app.use('/notifications', notificationRoutes);
+    this.app.use('/search', searchRoutes);
+    this.app.use('/analytics', analyticsRoutes);
 
    
   }

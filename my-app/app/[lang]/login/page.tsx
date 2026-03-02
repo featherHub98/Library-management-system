@@ -22,6 +22,11 @@ interface FormType {
   password: string;
 }
 
+interface AuthMeResponse {
+  isAuthenticated: boolean;
+  role?: 'admin' | 'public';
+}
+
 export default function Login() {
   const params = useParams();
   const router = useRouter();
@@ -37,10 +42,23 @@ export default function Login() {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      router.push(`/${lang}`);
-    }
+    const checkIfAlreadyLoggedIn = async () => {
+      try {
+        const response = await fetch('/api/auth/me');
+        const data = (await response.json()) as AuthMeResponse;
+        
+        if (data.isAuthenticated) {
+          if (data.role === 'admin') {
+            router.push(`/${lang}/admin/books`);
+          } else {
+            router.push(`/${lang}`);
+          }
+        }
+      } catch (error) {
+        // Not logged in, stay on login page
+      }
+    };
+    checkIfAlreadyLoggedIn();
   }, [lang, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -53,12 +71,27 @@ export default function Login() {
       const token = result.data.token;
       
       if (token) {
-        localStorage.setItem('authToken', token);
         setSuccess(true);
         console.log('Login successful:', result.data);
-        setTimeout(() => {
-          router.push(`/${lang}`);
-        }, 500);
+        
+        // Check auth status and redirect based on role
+        try {
+          const authResponse = await fetch('/api/auth/me');
+          const authData = (await authResponse.json()) as AuthMeResponse;
+          
+          setTimeout(() => {
+            if (authData.isAuthenticated && authData.role === 'admin') {
+              router.push(`/${lang}/admin/books`);
+            } else {
+              router.push(`/${lang}`);
+            }
+          }, 500);
+        } catch (authError) {
+          // Fallback: redirect to home
+          setTimeout(() => {
+            router.push(`/${lang}`);
+          }, 500);
+        }
       } else {
         setError('No token received from server');
       }

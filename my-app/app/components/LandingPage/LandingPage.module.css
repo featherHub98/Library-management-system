@@ -67,11 +67,13 @@
   position: relative;
 }
 
-.locationMarkers {
+.mapLocationHeader {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .mapIframe {
@@ -79,6 +81,25 @@
   height: 500px;
   border: none;
   border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.locationPopup {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  max-width: 200px;
+}
+
+.mapContainer {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 

@@ -155,10 +155,22 @@ function Login() {
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [success, setSuccess] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const token = localStorage.getItem('authToken');
-        if (token) {
-            router.push(`/${lang}`);
-        }
+        const checkIfAlreadyLoggedIn = async ()=>{
+            try {
+                const response = await fetch('/api/auth/me');
+                const data = await response.json();
+                if (data.isAuthenticated) {
+                    if (data.role === 'admin') {
+                        router.push(`/${lang}/admin/books`);
+                    } else {
+                        router.push(`/${lang}`);
+                    }
+                }
+            } catch (error) {
+            // Not logged in, stay on login page
+            }
+        };
+        checkIfAlreadyLoggedIn();
     }, [
         lang,
         router
@@ -171,12 +183,25 @@ function Login() {
             const result = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post('/api/auth/login', formData);
             const token = result.data.token;
             if (token) {
-                localStorage.setItem('authToken', token);
                 setSuccess(true);
                 console.log('Login successful:', result.data);
-                setTimeout(()=>{
-                    router.push(`/${lang}`);
-                }, 500);
+                // Check auth status and redirect based on role
+                try {
+                    const authResponse = await fetch('/api/auth/me');
+                    const authData = await authResponse.json();
+                    setTimeout(()=>{
+                        if (authData.isAuthenticated && authData.role === 'admin') {
+                            router.push(`/${lang}/admin/books`);
+                        } else {
+                            router.push(`/${lang}`);
+                        }
+                    }, 500);
+                } catch (authError) {
+                    // Fallback: redirect to home
+                    setTimeout(()=>{
+                        router.push(`/${lang}`);
+                    }, 500);
+                }
             } else {
                 setError('No token received from server');
             }
@@ -206,7 +231,7 @@ function Login() {
                     children: t.loginTitle
                 }, void 0, false, {
                     fileName: "[project]/app/[lang]/login/page.tsx",
-                    lineNumber: 85,
+                    lineNumber: 118,
                     columnNumber: 9
                 }, this),
                 error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Alert$2f$Alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -216,7 +241,7 @@ function Login() {
                     children: error
                 }, void 0, false, {
                     fileName: "[project]/app/[lang]/login/page.tsx",
-                    lineNumber: 90,
+                    lineNumber: 123,
                     columnNumber: 11
                 }, this),
                 success && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Alert$2f$Alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -225,7 +250,7 @@ function Login() {
                     children: "Login successful! Redirecting..."
                 }, void 0, false, {
                     fileName: "[project]/app/[lang]/login/page.tsx",
-                    lineNumber: 96,
+                    lineNumber: 129,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -247,7 +272,7 @@ function Login() {
                                         }))
                             }, void 0, false, {
                                 fileName: "[project]/app/[lang]/login/page.tsx",
-                                lineNumber: 103,
+                                lineNumber: 136,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$TextField$2f$TextField$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -264,7 +289,7 @@ function Login() {
                                         }))
                             }, void 0, false, {
                                 fileName: "[project]/app/[lang]/login/page.tsx",
-                                lineNumber: 115,
+                                lineNumber: 148,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -277,18 +302,18 @@ function Login() {
                                 children: loading ? 'Logging in...' : t.login
                             }, void 0, false, {
                                 fileName: "[project]/app/[lang]/login/page.tsx",
-                                lineNumber: 128,
+                                lineNumber: 161,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/[lang]/login/page.tsx",
-                        lineNumber: 102,
+                        lineNumber: 135,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/[lang]/login/page.tsx",
-                    lineNumber: 101,
+                    lineNumber: 134,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -300,7 +325,7 @@ function Login() {
                             children: t.noAccount
                         }, void 0, false, {
                             fileName: "[project]/app/[lang]/login/page.tsx",
-                            lineNumber: 142,
+                            lineNumber: 175,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -309,24 +334,24 @@ function Login() {
                             children: t.forgotLink || 'Forgot password?'
                         }, void 0, false, {
                             fileName: "[project]/app/[lang]/login/page.tsx",
-                            lineNumber: 145,
+                            lineNumber: 178,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/[lang]/login/page.tsx",
-                    lineNumber: 141,
+                    lineNumber: 174,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/[lang]/login/page.tsx",
-            lineNumber: 84,
+            lineNumber: 117,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/[lang]/login/page.tsx",
-        lineNumber: 83,
+        lineNumber: 116,
         columnNumber: 5
     }, this);
 }

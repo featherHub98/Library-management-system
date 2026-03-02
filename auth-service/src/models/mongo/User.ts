@@ -9,6 +9,22 @@ export type UserAttributes = {
   role: 'admin' | 'public';
   resetCode?: string;
   resetExpires?: Date;
+  firstName?: string;
+  lastName?: string;
+  phoneNumber?: string;
+  profilePicture?: string;
+  bio?: string;
+  memberSince?: Date;
+  totalBooksRead?: number;
+  totalBooksRating?: number;
+  isActive?: boolean;
+  deactivatedAt?: Date;
+  notificationPreferences?: {
+    emailNotifications?: boolean;
+    bookAvailable?: boolean;
+    newReleases?: boolean;
+    dueReminders?: boolean;
+  };
 };
 
 export type UserDocument = UserAttributes & Document;
@@ -40,6 +56,58 @@ const userSchema = new Schema<UserDocument>(
     },
     resetExpires: {
       type: Date,
+    },
+    firstName: {
+      type: String,
+    },
+    lastName: {
+      type: String,
+    },
+    phoneNumber: {
+      type: String,
+    },
+    profilePicture: {
+      type: String,
+    },
+    bio: {
+      type: String,
+    },
+    memberSince: {
+      type: Date,
+      default: Date.now,
+    },
+    totalBooksRead: {
+      type: Number,
+      default: 0,
+    },
+    totalBooksRating: {
+      type: Number,
+      default: 0,
+    },
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
+    deactivatedAt: {
+      type: Date,
+    },
+    notificationPreferences: {
+      emailNotifications: {
+        type: Boolean,
+        default: true,
+      },
+      bookAvailable: {
+        type: Boolean,
+        default: true,
+      },
+      newReleases: {
+        type: Boolean,
+        default: true,
+      },
+      dueReminders: {
+        type: Boolean,
+        default: true,
+      },
     },
   },
   { timestamps: false }
