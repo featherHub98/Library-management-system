@@ -2,7 +2,11 @@
 "[project]/app/[lang]/login/login.module.css [app-client] (css module)", ((__turbopack_context__) => {
 
 __turbopack_context__.v({
+  "Mui-focused": "login-module___zsMCa__Mui-focused",
+  "MuiOutlinedInput-root": "login-module___zsMCa__MuiOutlinedInput-root",
   "errorAlert": "login-module___zsMCa__errorAlert",
+  "fadeInUp": "login-module___zsMCa__fadeInUp",
+  "float": "login-module___zsMCa__float",
   "form": "login-module___zsMCa__form",
   "inputField": "login-module___zsMCa__inputField",
   "link": "login-module___zsMCa__link",

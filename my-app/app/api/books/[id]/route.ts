@@ -20,31 +20,24 @@ export async function GET(
   }
 }
 
-export async function PUT(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  try {
-    const { id } = await params;
-    const body = await request.json();
-
-    const response = await fetch(`${GATEWAY_URL}/api/books/${id}`, {
+export async function PUT(request: NextRequest, { params }) {
+  const contentType = request.headers.get('content-type') || '';
+  
+  if (contentType.includes('multipart/form-data')) {
+    // Handle FormData (with image upload)
+    const formData = await request.formData();
+    response = await fetch(`${GATEWAY_URL}/api/books/${id}`, {
       method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      body: formData,  // Send as FormData
+    });
+  } else {
+    // Handle JSON
+    const body = await request.json();
+    response = await fetch(`${GATEWAY_URL}/api/books/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
-
-    if (!response.ok) {
-      throw new Error('Failed to update book');
-    }
-
-    const updatedBook = await response.json();
-    return NextResponse.json(updatedBook);
-  } catch (error) {
-    console.error('Error updating book:', error);
-    return NextResponse.json({ error: 'Failed to update book' }, { status: 500 });
   }
 }
 

@@ -5,11 +5,12 @@ import {
   Container, Typography, Table, TableBody, TableCell, TableContainer,
   TableHead, TableRow, Paper, Button, Dialog, DialogTitle,
   DialogContent, DialogActions, TextField, Box, Alert, IconButton,
-  TablePagination
+  TablePagination, Avatar, Chip, Snackbar
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import { styled } from '@mui/material/styles';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -30,6 +31,7 @@ interface Book {
   price: number;
   stock?: number;
   status?: 'in_stock' | 'out_of_stock';
+  hasImage?: boolean;
 }
 
 export default function AdminBooksPage() {
@@ -42,7 +44,9 @@ export default function AdminBooksPage() {
   const [createForm, setCreateForm] = useState({ title: '', author: '', basePrice: '', format: 'physical', stock: '0' });
   const [bookings, setBookings] = useState<{ startDate: string; endDate: string }[]>([]);
   const [bookingDates, setBookingDates] = useState<{ start?: string; end?: string }>({});
-  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [createImageFile, setCreateImageFile] = useState<File | null>(null);
+  const [editImageFile, setEditImageFile] = useState<File | null>(null);
+  const [editImagePreview, setEditImagePreview] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -96,8 +100,8 @@ export default function AdminBooksPage() {
     if (createForm.format === 'physical') {
       formData.append('stock', createForm.stock.toString());
     }
-    if (imageFile) {
-      formData.append('image', imageFile);
+    if (createImageFile) {
+      formData.append('image', createImageFile);
     }
 
     try {
@@ -111,7 +115,7 @@ export default function AdminBooksPage() {
         setSuccess('Book created successfully');
         setCreateModalOpen(false);
         setCreateForm({ title: '', author: '', basePrice: '', format: 'physical', stock: '0' });
-        setImageFile(null);
+        setCreateImageFile(null);
         fetchBooks();
       } else {
         const errorData = await response.json();
@@ -134,23 +138,56 @@ export default function AdminBooksPage() {
 
     try {
       setError(null);
-      const response = await fetch(`/api/books/${editingBook._id || editingBook.id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(editForm),
-      });
+      
+      // If there's a new image, use FormData
+      if (editImageFile) {
+        const formData = new FormData();
+        formData.append('title', editForm.title);
+        formData.append('author', editForm.author);
+        formData.append('basePrice', editForm.basePrice.toString());
+        formData.append('format', editForm.format);
+        if (editForm.format === 'physical') {
+          formData.append('stock', editForm.stock.toString());
+        }
+        formData.append('image', editImageFile);
 
-      if (response.ok) {
-        setSuccess('Book updated successfully');
-        setEditModalOpen(false);
-        setEditingBook(null);
-        fetchBooks();
+        const response = await fetch(`/api/books/${editingBook._id || editingBook.id}`, {
+          method: 'PUT',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to update book');
+        }
       } else {
-        const errorData = await response.json();
-        setError(errorData.error || 'Failed to update book');
+        // No new image, use JSON
+        const response = await fetch(`/api/books/${editingBook._id || editingBook.id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            title: editForm.title,
+            author: editForm.author,
+            basePrice: parseFloat(editForm.basePrice),
+            format: editForm.format,
+            stock: editForm.format === 'physical' ? parseInt(editForm.stock, 10) : 0,
+          }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to update book');
+        }
       }
+
+      setSuccess('Book updated successfully');
+      setEditModalOpen(false);
+      setEditingBook(null);
+      setEditImageFile(null);
+      setEditImagePreview(null);
+      fetchBooks();
     } catch (err: unknown) {
       let message = 'Failed to update book';
       if (err instanceof Error) {
@@ -196,13 +233,35 @@ export default function AdminBooksPage() {
       format: book.format || 'physical',
       stock: (book.stock ?? 0).toString(),
     });
+    setEditImageFile(null);
+    setEditImagePreview(book.hasImage ? `/api/books/${book._id || book.id}/image` : null);
     setBookingDates({});
+    
     fetch(`/api/books/${book._id || book.id}/bookings`)
       .then(r => r.ok ? r.json() : Promise.reject())
       .then(data => setBookings(data.data || []))
       .catch(() => setBookings([]));
 
     setEditModalOpen(true);
+  };
+
+  const handleEditImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setEditImageFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setEditImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleCreateImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setCreateImageFile(file);
+    }
   };
 
   const handleChangePage = (event: unknown, newPage: number) => {
@@ -239,8 +298,6 @@ export default function AdminBooksPage() {
     setPage(0);
   };
 
-  const paginatedBooks = books;
-
   if (loading) {
     return (
       <Container maxWidth="lg" sx={{ mt: 4 }}>
@@ -276,22 +333,19 @@ export default function AdminBooksPage() {
         />
       </Box>
 
-      {error && (
-        <Alert severity="error" sx={{ mb: 2 }}>
-          {error}
-        </Alert>
-      )}
+      <Snackbar open={!!error} autoHideDuration={6000} onClose={() => setError(null)}>
+        <Alert severity="error" onClose={() => setError(null)}>{error}</Alert>
+      </Snackbar>
 
-      {success && (
-        <Alert severity="success" sx={{ mb: 2 }}>
-          {success}
-        </Alert>
-      )}
+      <Snackbar open={!!success} autoHideDuration={6000} onClose={() => setSuccess(null)}>
+        <Alert severity="success" onClose={() => setSuccess(null)}>{success}</Alert>
+      </Snackbar>
 
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
+              <StyledTableCell>Image</StyledTableCell>
               <StyledTableCell>Title</StyledTableCell>
               <StyledTableCell>Author</StyledTableCell>
               <StyledTableCell>Format</StyledTableCell>
@@ -303,15 +357,38 @@ export default function AdminBooksPage() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {paginatedBooks.map((book) => (
+            {books.map((book) => (
               <TableRow key={book._id || book.id}>
+                <TableCell>
+                  <Avatar
+                    variant="rounded"
+                    src={book.hasImage ? `/api/books/${book._id || book.id}/image` : undefined}
+                    sx={{ width: 50, height: 70, bgcolor: 'grey.200' }}
+                  >
+                    {!book.hasImage && <PhotoCamera />}
+                  </Avatar>
+                </TableCell>
                 <TableCell>{book.title}</TableCell>
                 <TableCell>{book.author}</TableCell>
-                <TableCell>{book.format || '-'}</TableCell>
+                <TableCell>
+                  <Chip 
+                    label={book.format || 'physical'} 
+                    size="small"
+                    color={book.format === 'ebook' ? 'info' : 'default'}
+                  />
+                </TableCell>
                 <TableCell>${book.basePrice?.toFixed(2) || '-'}</TableCell>
                 <TableCell>${book.price}</TableCell>
                 <TableCell>{book.format === 'physical' ? (book.stock ?? 0) : '-'}</TableCell>
-                <TableCell>{book.format === 'physical' ? (book.status === 'out_of_stock' ? 'Out of stock' : 'In stock') : '-'}</TableCell>
+                <TableCell>
+                  {book.format === 'physical' && (
+                    <Chip
+                      label={book.status === 'out_of_stock' ? 'Out of stock' : 'In stock'}
+                      color={book.status === 'out_of_stock' ? 'error' : 'success'}
+                      size="small"
+                    />
+                  )}
+                </TableCell>
                 <TableCell align="center">
                   <IconButton
                     color="primary"
@@ -343,6 +420,7 @@ export default function AdminBooksPage() {
         />
       </TableContainer>
 
+      {/* Create Dialog */}
       <Dialog open={createModalOpen} onClose={() => setCreateModalOpen(false)} maxWidth="sm" fullWidth>
         <DialogTitle>Add New Book</DialogTitle>
         <DialogContent>
@@ -396,12 +474,27 @@ export default function AdminBooksPage() {
               sx={{ mb: 2 }}
             />
           )}
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => setImageFile(e.target.files?.[0] || null)}
-            style={{ marginTop: 16 }}
-          />
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="subtitle2" gutterBottom>Book Image</Typography>
+            <Button
+              variant="outlined"
+              component="label"
+              startIcon={<PhotoCamera />}
+            >
+              Upload Image
+              <input
+                type="file"
+                accept="image/*"
+                hidden
+                onChange={handleCreateImageChange}
+              />
+            </Button>
+            {createImageFile && (
+              <Typography variant="body2" sx={{ mt: 1 }}>
+                Selected: {createImageFile.name}
+              </Typography>
+            )}
+          </Box>
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setCreateModalOpen(false)}>Cancel</Button>
@@ -409,6 +502,7 @@ export default function AdminBooksPage() {
         </DialogActions>
       </Dialog>
 
+      {/* Edit Dialog */}
       <Dialog open={editModalOpen} onClose={() => setEditModalOpen(false)} maxWidth="sm" fullWidth>
         <DialogTitle>Edit Book</DialogTitle>
         <DialogContent>
@@ -463,22 +557,55 @@ export default function AdminBooksPage() {
             />
           )}
 
+          {/* Image Upload Section */}
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="subtitle2" gutterBottom>Book Image</Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+              {editImagePreview && (
+                <Avatar
+                  variant="rounded"
+                  src={editImagePreview}
+                  sx={{ width: 80, height: 100 }}
+                />
+              )}
+              <Button
+                variant="outlined"
+                component="label"
+                startIcon={<PhotoCamera />}
+              >
+                {editImagePreview ? 'Change Image' : 'Upload Image'}
+                <input
+                  type="file"
+                  accept="image/*"
+                  hidden
+                  onChange={handleEditImageChange}
+                />
+              </Button>
+            </Box>
+            {editImageFile && (
+              <Typography variant="body2" color="success.main" sx={{ mt: 1 }}>
+                New image selected: {editImageFile.name}
+              </Typography>
+            )}
+          </Box>
+
+          {/* Bookings Section */}
           {editForm.format === 'physical' && (
-            <Box sx={{ mt: 2 }}>
+            <Box sx={{ mt: 3 }}>
               <Typography variant="subtitle1">Booked Periods</Typography>
               {bookings.length === 0 ? (
-                <Typography variant="body2">No bookings yet</Typography>
+                <Typography variant="body2" color="text.secondary">No bookings yet</Typography>
               ) : (
-                <ul>
+                <Box component="ul" sx={{ pl: 2, mt: 1 }}>
                   {bookings.map((b, idx) => (
                     <li key={idx}>
                       {new Date(b.startDate).toLocaleDateString()} - {new Date(b.endDate).toLocaleDateString()}
                     </li>
                   ))}
-                </ul>
+                </Box>
               )}
 
-              <Box sx={{ mt: 2, display: 'flex', gap: 1, alignItems: 'center' }}>
+              <Box sx={{ mt: 2, display: 'flex', gap: 1, alignItems: 'center', flexWrap: 'wrap' }}>
                 <TextField
                   label="From"
                   type="date"
@@ -495,13 +622,17 @@ export default function AdminBooksPage() {
                   value={bookingDates.end || ''}
                   onChange={(e) => setBookingDates({ ...bookingDates, end: e.target.value })}
                 />
-                <Button variant="outlined" size="small" onClick={handleCreateBooking}>Book</Button>
+                <Button variant="outlined" size="small" onClick={handleCreateBooking}>Add Booking</Button>
               </Box>
             </Box>
           )}
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setEditModalOpen(false)}>Cancel</Button>
+          <Button onClick={() => {
+            setEditModalOpen(false);
+            setEditImageFile(null);
+            setEditImagePreview(null);
+          }}>Cancel</Button>
           <Button onClick={handleUpdateBook} variant="contained">Update</Button>
         </DialogActions>
       </Dialog>

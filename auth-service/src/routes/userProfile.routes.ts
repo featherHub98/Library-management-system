@@ -3,7 +3,7 @@ import userProfileController from '../controllers/userProfile.controller';
 
 const router = Router();
 
-// User profile endpoints
+
 router.get('/:userId', userProfileController.getUserProfile.bind(userProfileController));
 router.put('/:userId', userProfileController.updateUserProfile.bind(userProfileController));
 router.put('/:userId/notifications', userProfileController.updateNotificationPreferences.bind(userProfileController));

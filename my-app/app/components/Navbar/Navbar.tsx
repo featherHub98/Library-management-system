@@ -15,6 +15,7 @@ import styles from './Navbar.module.css';
 import en from '@/dictionaries/en.json'
 import fr from '@/dictionaries/fr.json'
 import ar from '@/dictionaries/ar.json'
+import NotificationBell from '../NotificationBell/NotificationBell';
 
 const dictionaries = { en, fr, ar };
 
@@ -51,7 +52,6 @@ export default function Navbar() {
     };
     checkAuth();
 
-    // Add a listener for storage events (login/logout in other tabs)
     const handleStorageChange = () => {
       checkAuth();
     };
@@ -139,6 +139,8 @@ export default function Navbar() {
         </Button>
       )}
 
+      <NotificationBell isAuthenticated={isAuthenticated} />
+
       <IconButton
         color="inherit"
         onClick={handleLanguageMenuOpen}
@@ -216,23 +218,21 @@ export default function Navbar() {
         <Typography variant="subtitle2" color="text.secondary" sx={{ mt: 1, px: 2 }}>
           {t.language}
         </Typography>
-        {languages.map((lang) => (
+        {languages.map((language) => (
           <ListItem 
-            key={lang.code}
-            className={`${styles.drawerLanguageItem} ${locale === lang.code ? styles.activeLanguage : ''}`}
+            key={language.code}
+            className={`${styles.drawerLanguageItem} ${lang === language.code ? styles.activeLanguage : ''}`}
             onClick={(e) => {
               e.stopPropagation();
-              changeLocale(lang.code);
+              changeLocale(language.code);
             }}
           >
-            <ListItemText primary={lang.name} />
+            <ListItemText primary={language.name} />
           </ListItem>
         ))}
       </List>
     </Box>
   );
-
-  const locale = lang;
 
   return (
     <>
@@ -265,13 +265,13 @@ export default function Navbar() {
         open={Boolean(anchorEl)}
         onClose={handleLanguageMenuClose}
       >
-        {languages.map((lang) => (
+        {languages.map((language) => (
           <MenuItem 
-            key={lang.code} 
-            onClick={() => changeLocale(lang.code)}
-            selected={locale === lang.code}
+            key={language.code} 
+            onClick={() => changeLocale(language.code)}
+            selected={lang === language.code}
           >
-            {lang.name}
+            {language.name}
           </MenuItem>
         ))}
       </Menu>

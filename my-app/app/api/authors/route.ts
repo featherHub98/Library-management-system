@@ -28,6 +28,28 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if user is authenticated and is an admin
+    const authResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL || ''}/api/auth/me`, {
+      headers: request.headers,
+    });
+
+    if (!authResponse.ok) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
+
+    const authData = await authResponse.json();
+
+    // ADMIN-ONLY CHECK: Only admins can add authors
+    if (!authData.isAuthenticated || authData.role !== 'admin') {
+      return NextResponse.json(
+        { error: 'Admin access required. Only administrators can add authors.' },
+        { status: 403 }
+      );
+    }
+
     const formData = await request.formData();
 
     const response = await fetch(`${GATEWAY_URL}/api/authors`, {
