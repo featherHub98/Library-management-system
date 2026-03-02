@@ -4,22 +4,23 @@ const GATEWAY_URL = process.env.GATEWAY_URL || 'http://localhost:8080';
 
 export async function GET(request: NextRequest) {
   try {
+    // Get user info first
     const authResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL || ''}/api/auth/me`, {
       headers: request.headers,
     });
 
     if (!authResponse.ok) {
-      return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
+      return NextResponse.json({ items: [] });
     }
 
     const authData = await authResponse.json();
     if (!authData.isAuthenticated) {
-      return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
+      return NextResponse.json({ items: [] });
     }
 
     const userId = authData.user?.id || authData.userId;
     if (!userId) {
-      return NextResponse.json({ error: 'User ID not found' }, { status: 400 });
+      return NextResponse.json({ items: [] });
     }
 
     const response = await fetch(`${GATEWAY_URL}/api/wishlist/${userId}`);
@@ -31,7 +32,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(wishlist);
   } catch (error) {
     console.error('Error fetching wishlist:', error);
-    return NextResponse.json({ error: 'Failed to fetch wishlist' }, { status: 500 });
+    return NextResponse.json({ items: [] });
   }
 }
 
@@ -66,7 +67,9 @@ export async function POST(request: NextRequest) {
     });
 
     if (!response.ok) {
-      throw new Error('Failed to add to wishlist');
+      const errorText = await response.text();
+      console.error('Wishlist add failed:', errorText);
+      return NextResponse.json({ error: 'Failed to add to wishlist' }, { status: 500 });
     }
 
     const wishlist = await response.json();
@@ -100,12 +103,17 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: 'Book ID required' }, { status: 400 });
     }
 
-    const response = await fetch(`${GATEWAY_URL}/api/wishlist/${userId}/remove/${bookId}`, {
-      method: 'DELETE',
+    // Book-service expects POST to /wishlist/remove with body
+    const response = await fetch(`${GATEWAY_URL}/api/wishlist/remove`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, bookId }),
     });
 
     if (!response.ok) {
-      throw new Error('Failed to remove from wishlist');
+      const errorText = await response.text();
+      console.error('Wishlist remove failed:', errorText);
+      return NextResponse.json({ error: 'Failed to remove from wishlist' }, { status: 500 });
     }
 
     const wishlist = await response.json();

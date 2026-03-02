@@ -113,10 +113,12 @@ export class BookController {
   }
 
 
+  // FIXED: Added image upload handling in updateBook
   async updateBook(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       const { id } = req.params;
       const updateData: UpdateBookDto = req.body;
+      const file = req.file;
 
       const updatedBook = await BookService.updateBook(id as string, updateData);
       
@@ -126,6 +128,20 @@ export class BookController {
           error: 'Book not found'
         });
         return;
+      }
+
+      // Handle image upload if file is provided
+      if (file) {
+        try {
+          await ImageService.saveImage(
+            id,
+            file.buffer,
+            file.mimetype,
+            file.originalname
+          );
+        } catch (imageError) {
+          console.warn('Image upload failed during update:', imageError);
+        }
       }
       
       res.status(200).json({

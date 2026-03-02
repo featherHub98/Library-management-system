@@ -7,7 +7,7 @@ export async function POST(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    // Check authentication
+    // Get auth info
     const authResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL || ''}/api/auth/me`, {
       headers: request.headers,
     });
@@ -23,23 +23,16 @@ export async function POST(
 
     const { id } = await params;
     const body = await request.json();
-    const { format, startDate, endDate } = body;
+    
+    const userId = authData.user?.id || authData.userId;
+    const username = authData.user?.username || authData.username;
+    const bookId = id;
 
-    // Create borrow record
-    const borrowData = {
-      bookId: id,
-      userId: authData.user?.id || authData.userId,
-      format,
-      startDate,
-      endDate,
-      borrowedAt: new Date().toISOString(),
-      status: 'active',
-    };
-
-    const response = await fetch(`${GATEWAY_URL}/api/books/${id}/borrow`, {
+    // Call the borrowing service
+    const response = await fetch(`${GATEWAY_URL}/api/borrow/borrow`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(borrowData),
+      body: JSON.stringify({ userId, username, bookId }),
     });
 
     if (!response.ok) {
@@ -51,7 +44,7 @@ export async function POST(
     }
 
     const result = await response.json();
-    return NextResponse.json(result, { status: 200 });
+    return NextResponse.json(result, { status: 201 });
   } catch (error) {
     console.error('Error borrowing book:', error);
     return NextResponse.json({ error: 'Failed to borrow book' }, { status: 500 });

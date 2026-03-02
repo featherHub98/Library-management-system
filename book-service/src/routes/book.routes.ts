@@ -12,7 +12,8 @@ router.post('/', upload.single('image'), validateBookCreation, BookController.cr
 router.get('/', validateBookQuery, BookController.getAllBooks);
 router.get('/author/:author?', BookController.getBooksByAuthor);
 router.get('/:id', BookController.getBookById);
-router.put('/:id', validateBookUpdate, BookController.updateBook);
+// FIXED: Added upload.single('image') middleware for PUT route
+router.put('/:id', upload.single('image'), validateBookUpdate, BookController.updateBook);
 router.delete('/:id', BookController.deleteBook);
 router.get('/price/range', BookController.getBooksByPriceRange);
 

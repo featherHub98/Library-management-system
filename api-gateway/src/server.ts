@@ -8,7 +8,7 @@ const SERVICE_NAME = "gateway";
 
 const app: Express = express();
 app.use(cors());
-
+app.use(express.json());
 
 const SERVICE_URLS: Record<string, string> = {
   "auth-service": "http://localhost:3001",
@@ -43,7 +43,6 @@ const registerService = async () => {
         timeout: "5s",
       },
     });
-
     console.log("Gateway registered in Consul");
   } catch (err) {
     console.warn("Failed to register gateway in Consul, using fallback URLs");
@@ -56,14 +55,8 @@ app.get("/health", (req: Request, res: Response) => {
 
 const getServiceUrl = async (serviceName: string): Promise<string> => {
   try {
-    const services = (await consulClient.agent.service.list()) as Record<
-      string,
-      ConsulService
-    >;
-
-    const serviceEntry = Object.values(services).find(
-      (s) => s.Service === serviceName
-    );
+    const services = (await consulClient.agent.service.list()) as Record<string, ConsulService>;
+    const serviceEntry = Object.values(services).find((s) => s.Service === serviceName);
 
     if (serviceEntry) {
       const host = serviceEntry.Address || "localhost";
@@ -84,103 +77,147 @@ const getServiceUrl = async (serviceName: string): Promise<string> => {
   throw new Error(`Service ${serviceName} not found and no fallback URL available`);
 };
 
+// Auth routes
 app.use("/api/auth", async (req, res, next) => {
   try {
     const target = await getServiceUrl("auth-service");
-
     console.log(`Gateway routing /api/auth -> ${target}`);
 
     return createProxyMiddleware({
       target,
       changeOrigin: true,
-      pathRewrite: {
-        "^/api/auth": "",
-      },
-      timeout: 30000, // 30 seconds
+      pathRewrite: { "^/api/auth": "" },
+      timeout: 30000,
       proxyTimeout: 30000,
       logLevel: "warn",
       onError: (err, req, res) => {
         console.error("Auth service proxy error:", err.message);
-        res.status(503).json({ 
-          error: "Auth service unavailable",
-          details: err.message
-        });
+        res.status(503).json({ error: "Auth service unavailable", details: err.message });
       }
     })(req, res, next);
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error("Proxy error:", message);
-    return res.status(503).json({ 
-      error: message,
-      details: "Auth service is unavailable. Please ensure all services are running."
-    });
+    return res.status(503).json({ error: message });
   }
 });
 
-
+// Books routes
 app.use("/api/books", async (req, res, next) => {
   try {
     const target = await getServiceUrl("book-service");
-
     console.log(`Gateway routing /api/books -> ${target}`);
 
     return createProxyMiddleware({
       target,
       changeOrigin: true,
-      pathRewrite: {
-        "^/api/books": "/books",
-      },
-      timeout: 30000, // 30 seconds
+      pathRewrite: { "^/api/books": "/books" },
+      timeout: 30000,
       proxyTimeout: 30000,
       logLevel: "warn",
       onError: (err, req, res) => {
         console.error("Book service proxy error:", err.message);
-        res.status(503).json({ 
-          error: "Book service unavailable",
-          details: err.message
-        });
+        res.status(503).json({ error: "Book service unavailable", details: err.message });
       }
     })(req, res, next);
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error("Proxy error:", message);
-    return res.status(503).json({ 
-      error: message,
-      details: "Book service is unavailable. Please ensure all services are running."
-    });
+    return res.status(503).json({ error: message });
   }
 });
 
+// Authors routes
 app.use("/api/authors", async (req, res, next) => {
   try {
     const target = await getServiceUrl("book-service");
-
     console.log(`Gateway routing /api/authors -> ${target}`);
 
     return createProxyMiddleware({
       target,
       changeOrigin: true,
-      pathRewrite: {
-        "^/api/authors": "/authors",
-      },
-      timeout: 30000, // 30 seconds
+      pathRewrite: { "^/api/authors": "/authors" },
+      timeout: 30000,
       proxyTimeout: 30000,
       logLevel: "warn",
       onError: (err, req, res) => {
         console.error("Author service proxy error:", err.message);
-        res.status(503).json({ 
-          error: "Author service unavailable",
-          details: err.message
-        });
+        res.status(503).json({ error: "Author service unavailable", details: err.message });
       }
     })(req, res, next);
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error("Proxy error:", message);
-    return res.status(503).json({ 
-      error: message,
-      details: "Author service is unavailable. Please ensure all services are running."
-    });
+    return res.status(503).json({ error: message });
+  }
+});
+
+// Wishlist routes - book-service mounts them at /user/wishlist
+app.use("/api/wishlist", async (req, res, next) => {
+  try {
+    const target = await getServiceUrl("book-service");
+    console.log(`Gateway routing /api/wishlist -> ${target}/user/wishlist`);
+
+    return createProxyMiddleware({
+      target,
+      changeOrigin: true,
+      pathRewrite: { "^/api/wishlist": "/user/wishlist" },
+      timeout: 30000,
+      proxyTimeout: 30000,
+      logLevel: "warn",
+      onError: (err, req, res) => {
+        console.error("Wishlist service proxy error:", err.message);
+        res.status(503).json({ error: "Wishlist service unavailable", details: err.message });
+      }
+    })(req, res, next);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    return res.status(503).json({ error: message });
+  }
+});
+
+// Borrowing routes - book-service mounts them at /borrowing
+app.use("/api/borrow", async (req, res, next) => {
+  try {
+    const target = await getServiceUrl("book-service");
+    console.log(`Gateway routing /api/borrow -> ${target}/borrowing`);
+
+    return createProxyMiddleware({
+      target,
+      changeOrigin: true,
+      pathRewrite: { "^/api/borrow": "/borrowing" },
+      timeout: 30000,
+      proxyTimeout: 30000,
+      logLevel: "warn",
+      onError: (err, req, res) => {
+        console.error("Borrow service proxy error:", err.message);
+        res.status(503).json({ error: "Borrow service unavailable", details: err.message });
+      }
+    })(req, res, next);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    return res.status(503).json({ error: message });
+  }
+});
+
+// Notifications routes
+app.use("/api/notifications", async (req, res, next) => {
+  try {
+    const target = await getServiceUrl("book-service");
+    console.log(`Gateway routing /api/notifications -> ${target}/notifications`);
+
+    return createProxyMiddleware({
+      target,
+      changeOrigin: true,
+      pathRewrite: { "^/api/notifications": "/notifications" },
+      timeout: 30000,
+      proxyTimeout: 30000,
+      logLevel: "warn",
+      onError: (err, req, res) => {
+        console.error("Notifications service proxy error:", err.message);
+        res.status(503).json({ error: "Notifications service unavailable", details: err.message });
+      }
+    })(req, res, next);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    return res.status(503).json({ error: message });
   }
 });
 
@@ -199,4 +236,3 @@ process.on("SIGTERM", () => {
     console.log("HTTP server closed");
   });
 });
-

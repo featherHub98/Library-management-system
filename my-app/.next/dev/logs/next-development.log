@@ -1,121 +1,37 @@
-[00:03:30.152] Server  LOG     ○ Compiling proxy ...
-[00:04:16.160] Server  LOG     ✓ Ready in 209.7s
-[00:06:23.686] Server  LOG     ○ Compiling /[lang] ...
-[00:08:37.547] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:34.316] Server  LOG     ✓ Finished filesystem cache database compaction in 51s
-[00:09:38.641] Server  LOG     ○ Compiling /[lang]/books ...
-[00:11:53.343] Server  LOG     ○ Compiling /[lang]/login ...
-[00:13:42.870] Browser LOG     Login successful: {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTFmMzdjZmY3MGJmZWZmNjJiYmM4YyIsInVzZXJuYW1lIjoiYWRtaW4yIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzcyNDc3NDI5LCJleHAiOjE3NzI0ODEwMjl9.9ELWtwNQzl-Ho0GPdp1NoQpy4bp2OX7SqQdGrmAnTPc","user":{"email":"admin@library.com","id":"69a1f37cff70bfeff62bbc8c","role":"admin","username":"admin2"}}
-[00:14:09.394] Browser WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
+[00:00:28.765] Server  LOG     ✓ Ready in 25.3s
+[00:00:49.027] Server  LOG     ○ Compiling /[lang] ...
+[00:01:09.815] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:15.579] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:01:44.112] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:02:13.342] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:02:13.946] Server  LOG     ○ Compiling /[lang]/admin/books ...
+[00:02:43.352] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:03:13.333] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:03:20.850] Server  LOG     ○ Compiling /api/books/[id] ...
+[00:03:39.430] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
+[00:03:39.593] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
+[00:03:43.331] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:03:46.930] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:47.383] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:03:47.579] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
+[00:04:17.463] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:04:31.709] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
+[00:04:31.903] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
+[00:04:34.059] Server  ERROR   Error adding to wishlist: TypeError: Failed to parse URL from /api/auth/me
+[00:04:36.889] Server  ERROR   Error adding to wishlist: TypeError: Failed to parse URL from /api/auth/me
+[00:04:48.097] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:05:05.406] Browser WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
 
-[00:14:09.394] Browser WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
+[00:05:05.406] Browser WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
 
-[00:14:09.394] Browser WARN    MUI Grid: The `sm` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
+[00:05:05.406] Browser WARN    MUI Grid: The `sm` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
 
-[00:20:55.162] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:20:57.984] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:21:09.619] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
-[00:21:09.776] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
-[00:21:26.016] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:21:26.225] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
-[00:21:26.446] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
-[00:21:28.837] Server  ERROR   Error adding to wishlist: TypeError: Failed to parse URL from /api/auth/me
-[00:21:56.327] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:22:26.325] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:22:56.351] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:23:26.323] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:23:56.334] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:25:20.332] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:26:20.373] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:26:27.868] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:26:35.915] Server  LOG     ○ Compiling /[lang]/forgot ...
-[00:32:08.762] Server  LOG     ✓ Compiled in 5.7s
-[00:32:43.722] Server  LOG     ✓ Compiled in 994ms
-[00:33:01.885] Server  ERROR   ⨯ ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-
-
-[00:33:02.221] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:02.221] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:02.221] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:05.034] Server  LOG     ○ Compiling /_error ...
-[00:33:06.216] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:07.215] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:11.529] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:11.532] Server  ERROR   ⨯ ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-
-
-[00:33:11.573] Server  ERROR   ⨯ ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-
-
-[00:33:11.582] Server  ERROR   ⨯ ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-
-
-[00:33:12.039] Browser ERROR   uncaughtError: Error: ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-
-
-[00:33:12.212] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:12.212] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:12.212] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:12.212] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:12.212] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:12.212] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:12.212] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:12.515] Browser ERROR   ./app
-An issue occurred while preparing your Next.js app
-Conflicting route and page at /[lang]/authors: route at /[lang]/authors/route and page at /[lang]/authors/page
-[00:33:16.529] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:35:48.786] Browser LOG     Login successful: {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTFmMzdjZmY3MGJmZWZmNjJiYmM4YyIsInVzZXJuYW1lIjoiYWRtaW4yIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzcyNDc4NzU1LCJleHAiOjE3NzI0ODIzNTV9.KZbWCKPbHBxlerip7NRNjqCtfCHIDgDUk1tgW3Mn_Yg","user":{"email":"admin@library.com","id":"69a1f37cff70bfeff62bbc8c","role":"admin","username":"admin2"}}
-[00:37:03.812] Server  ERROR   Error updating book: SyntaxError: No number after minus sign in JSON at position 1 (line 1 column 2)
-[00:37:21.647] Server  LOG     ✓ Finished filesystem cache database compaction in 15.1s
-[00:37:45.721] Server  ERROR   Error updating book: SyntaxError: No number after minus sign in JSON at position 1 (line 1 column 2)
-[00:38:36.126] Server  ERROR   Error updating book: SyntaxError: No number after minus sign in JSON at position 1 (line 1 column 2)
-[00:42:17.562] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:42:22.468] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:42:49.803] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:42:53.758] Server  ERROR   ⨯ ReferenceError: id is not defined
-[00:43:19.725] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:43:29.052] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
-[00:43:29.310] Server  ERROR   Error fetching wishlist: TypeError: Failed to parse URL from /api/auth/me
-[00:43:45.540] Server  LOG     ○ Compiling /api/books/[id]/borrow ...
-[00:43:52.379] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:44:04.506] Server  ERROR   Error borrowing book: TypeError: Failed to parse URL from /api/auth/me
-[00:44:20.462] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:44:50.520] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:45:20.614] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
-[00:46:20.418] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:05:17.394] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:05:41.241] Server  ERROR   Error creating author: TypeError: Failed to parse URL from /api/auth/me
+[00:05:47.512] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:06:17.399] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:06:47.807] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:07:17.351] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:07:47.359] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:08:17.800] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
+[00:08:47.802] Server  ERROR   Error fetching notifications: TypeError: Failed to parse URL from /api/auth/me
